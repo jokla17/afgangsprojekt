@@ -4,6 +4,9 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import { OSM } from 'ol/source';
 import TileLayer from 'ol/layer/Tile';
+import { MapData } from './MapData';
+import { MapService } from './map.service';
+import { useGeographic } from 'ol/proj';
 
 @Component({
   selector: 'app-map',
@@ -12,14 +15,20 @@ import TileLayer from 'ol/layer/Tile';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  constructor(private mapService:MapService) { }
 
   public map!: Map;
+  mapData: MapData;
+
   ngOnInit(): void {
-    this.initMap();
- }
+    this.mapService.getMapData().subscribe(mapData => {
+      this.mapData = mapData;
+      this.initMap();
+    })
+  }
 
  initMap(): void{
+  useGeographic();
   this.map = new Map({
     layers: [
       new TileLayer({
@@ -28,10 +37,17 @@ export class MapComponent implements OnInit {
     ],
     target: 'map',
     view: new View({
-      center: [0, 0],
-      zoom: 2,
-      maxZoom: 18,
+      center: [this.mapData.longitude, this.mapData.latitude],
+      zoom: 18,
     }),
   });
+  this.map.on("click", () => console.log(this.map.getView().calculateExtent(this.map.getSize())))
+  this.map.setView(new View({
+    center: [this.mapData.longitude, this.mapData.latitude],
+    extent: this.map.getView().calculateExtent(this.map.getSize()),
+    zoom: 18,
+    minZoom: 18,
+    maxZoom: 19
+  }))
  }
 }

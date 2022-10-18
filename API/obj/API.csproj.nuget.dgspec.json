@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\afgangsprojekt\\API\\API.csproj": {}
+    "C:\\Users\\themi\\OneDrive\\Skrivebord\\Github Afgangsprojekt\\afgangsprojekt\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\afgangsprojekt\\API\\API.csproj": {
+    "C:\\Users\\themi\\OneDrive\\Skrivebord\\Github Afgangsprojekt\\afgangsprojekt\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\afgangsprojekt\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\themi\\OneDrive\\Skrivebord\\Github Afgangsprojekt\\afgangsprojekt\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\GitHub\\afgangsprojekt\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\afgangsprojekt\\API\\obj\\",
+        "projectPath": "C:\\Users\\themi\\OneDrive\\Skrivebord\\Github Afgangsprojekt\\afgangsprojekt\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\themi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\themi\\OneDrive\\Skrivebord\\Github Afgangsprojekt\\afgangsprojekt\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jonas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\themi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -51,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

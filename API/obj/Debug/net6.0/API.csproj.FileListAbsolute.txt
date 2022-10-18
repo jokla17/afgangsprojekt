@@ -25,3 +25,36 @@ D:\GitHub\afgangsprojekt\API\obj\Debug\net6.0\refint\API.dll
 D:\GitHub\afgangsprojekt\API\obj\Debug\net6.0\API.pdb
 D:\GitHub\afgangsprojekt\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 D:\GitHub\afgangsprojekt\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\appsettings.json
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\API.exe
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\API.deps.json
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\API.runtimeconfig.json
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\API.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\API.pdb
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.csproj.AssemblyReference.cache
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.AssemblyInfoInputs.cache
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.AssemblyInfo.cs
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.csproj.CoreCompileInputs.cache
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\scopedcss\bundle\API.styles.css
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.csproj.CopyComplete
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\refint\API.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.pdb
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\API.genruntimeconfig.cache
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\System.Web.Http.Cors.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
