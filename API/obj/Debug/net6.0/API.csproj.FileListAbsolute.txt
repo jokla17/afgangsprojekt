@@ -58,3 +58,9 @@ C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\
 C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\System.Web.Http.Cors.dll
 C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\themi\OneDrive\Skrivebord\Github Afgangsprojekt\afgangsprojekt\API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\GitHub\afgangsprojekt\API\bin\Debug\net6.0\System.Web.Cors.dll
+D:\GitHub\afgangsprojekt\API\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\GitHub\afgangsprojekt\API\bin\Debug\net6.0\System.Web.Http.dll
+D:\GitHub\afgangsprojekt\API\bin\Debug\net6.0\System.Web.Http.Cors.dll
+D:\GitHub\afgangsprojekt\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\GitHub\afgangsprojekt\API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
