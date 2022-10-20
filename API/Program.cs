@@ -1,3 +1,6 @@
+using API.Repositories;
+using API.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,6 +13,8 @@ builder.Services.AddCors(o => o.AddPolicy("myPolicy", builder => {
     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
 }));
 
+builder.Services.AddSingleton<IconRepository>();
+builder.Services.AddSingleton<IconService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
