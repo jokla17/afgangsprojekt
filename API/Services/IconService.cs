@@ -27,7 +27,7 @@ namespace API.Services
         }
 
         //get icon by id
-        public Icon getIcon(string id)
+        public Icon getIcon(int id)
         {
             return _iconRepository.GetIcon(id);
         }

@@ -19,7 +19,7 @@ namespace API.Controllers
         }
 
         [HttpGet("ReadOne")]
-        public async Task<IActionResult> ReadOne(string id)
+        public async Task<IActionResult> ReadOne(int id)
         {
             Compumat result = await _compumatService.GetCompumat(id);
             return Ok(result);

@@ -16,7 +16,7 @@ namespace API.Services
         }
         
         //read one from table
-        public async Task<Compumat> GetCompumat(string id)
+        public async Task<Compumat> GetCompumat(int id)
         {
             return await _compumatRepository.GetCompumat(id);
         }

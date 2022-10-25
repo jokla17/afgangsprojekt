@@ -9,7 +9,7 @@ namespace API.Repositories
         SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-P74EPR6\\SQLEXPRESS;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         //read one from table
-        public async Task<Compumat> GetCompumat(string id)
+        public async Task<Compumat> GetCompumat(int id)
             {
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand("SELECT * FROM db.dbo.Compumat WHERE Id = @Id", sqlConnection);
@@ -81,7 +81,7 @@ namespace API.Repositories
             Compumat result = new Compumat();
             if(resp > 0)
             {
-               result = await GetCompumat(compumat.Id);
+               result = await GetCompumat((int)compumat.Id);
             }
             return result;
         }
@@ -100,7 +100,7 @@ namespace API.Repositories
         private Compumat ParseCompumat(SqlDataReader sqlDataReader)
         {
             Compumat compumat = new Compumat();
-            compumat.Id = sqlDataReader["Id"].ToString();
+            compumat.Id = sqlDataReader.GetInt32("Id");
             compumat.Name = sqlDataReader["Name"].ToString();
             compumat.Longitude = sqlDataReader.GetDouble("Longitude");
             compumat.Latitude = sqlDataReader.GetDouble("Latitude");

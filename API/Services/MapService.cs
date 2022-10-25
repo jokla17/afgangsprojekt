@@ -13,7 +13,7 @@ namespace API.Services
         }
 
         //read one from table
-        public async Task<Map> GetMap(string id)
+        public async Task<Map> GetMap(int id)
         {
             return await _mapRepository.GetMap(id);
         }

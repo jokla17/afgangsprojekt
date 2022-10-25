@@ -20,7 +20,7 @@ namespace API.Controllers
         }
 
         [HttpGet("ReadOne")]
-        public async Task<IActionResult> ReadOne(string id)
+        public async Task<IActionResult> ReadOne(int id)
         {
             Map result = await _mapService.GetMap(id);
             return Ok(result);

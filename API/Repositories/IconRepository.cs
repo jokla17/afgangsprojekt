@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace API.Repositories
 {
@@ -17,7 +18,7 @@ namespace API.Repositories
             while (sqlDataReader.Read())
             {
                 Icon icon = new Icon();
-                icon.Id = sqlDataReader["Id"].ToString();
+                icon.Id = sqlDataReader.GetInt32("Id");
                 icon.Name = sqlDataReader["Name"].ToString();
                 icon.SvgIcon = sqlDataReader["SvgPath"].ToString();
                 icons.Add(icon);
@@ -27,7 +28,7 @@ namespace API.Repositories
         }
 
         //read one from table
-        public Icon GetIcon(string id)
+        public Icon GetIcon(int id)
         {
             Icon icon = new Icon();
             sqlConnection.Open();
@@ -36,7 +37,7 @@ namespace API.Repositories
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
-                icon.Id = sqlDataReader["Id"].ToString();
+                icon.Id = sqlDataReader.GetInt32("Id");
                 icon.Name = sqlDataReader["Name"].ToString();
                 icon.SvgIcon = sqlDataReader["SvgPath"].ToString();
             }

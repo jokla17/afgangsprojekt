@@ -9,7 +9,7 @@ namespace API.Repositories
         SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-P74EPR6\\SQLEXPRESS;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         //read one from table
-        public async Task<Map> GetMap(string id)
+        public async Task<Map> GetMap(int id)
         {
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand("SELECT * FROM db.dbo.Site WHERE Id = @Id", sqlConnection);
@@ -79,7 +79,7 @@ namespace API.Repositories
             Map result = new Map();
             if (resp > 0)
             {
-                result = await GetMap(map.Id);
+                result = await GetMap((int)map.Id);
             }
             return result;
         }
@@ -99,7 +99,7 @@ namespace API.Repositories
         private Map ParseMap(SqlDataReader sqlDataReader)
         {
             Map map = new Map();
-            map.Id = sqlDataReader["Id"].ToString();
+            map.Id = sqlDataReader.GetInt32("Id");
             map.CampSiteName = sqlDataReader["CampSiteName"].ToString();
             map.Longitude = sqlDataReader.GetDouble("Longitude");
             map.Latitude = sqlDataReader.GetDouble("Latitude");
