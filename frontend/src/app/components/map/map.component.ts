@@ -21,8 +21,15 @@ export class MapComponent implements OnInit {
   mapData: MapData;
 
   ngOnInit(): void {
-    this.mapService.getMapData().subscribe(mapData => {
-      this.mapData = mapData;
+    // this.mapService.getMapData(1).subscribe(data => {
+    //   this.mapData = data;
+    // })
+  }
+
+  ngAfterViewInit(): void {
+      this.mapService.getMapData(1).subscribe((mapData) => {
+        this.mapData = mapData;
+        console.log(this.mapData);
       this.initMap();
     })
   }
