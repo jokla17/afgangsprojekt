@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.customPopup .leaflet-popup-content-wrapper,
+.customPopup .leaflet-popup-tip {
+  color: rgb(45, 45, 45);
+  background: #fff;
+}
+
+.leaflet-popup-tip{
+  display: none;
+}

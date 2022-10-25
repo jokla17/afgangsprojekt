@@ -10,7 +10,7 @@ export class MapService {
 
 constructor(private http:HttpClient) { }
 
-getMapData(id: number): Observable<MapData>{
+getMapData(id:number): Observable<MapData>{
   return this.http.get<MapData>(`https://localhost:7049/Map/ReadOne?id=${id}`);
 }
 }
