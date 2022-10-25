@@ -8,8 +8,6 @@ import { MapComponent } from './components/map/map.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CompumatComponent } from './components/compumat/compumat.component';
 import { IconComponent } from './components/icon/icon.component';
-import { BoomIconComponent } from './components/icon/boom-icon/boom-icon.component';
-import { VendingIconComponent } from './components/icon/vending-icon/vending-icon.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +15,6 @@ import { VendingIconComponent } from './components/icon/vending-icon/vending-ico
     MapComponent,
     CompumatComponent,
     IconComponent,
-    BoomIconComponent,
-    VendingIconComponent
   ],
   imports: [
     BrowserModule,
