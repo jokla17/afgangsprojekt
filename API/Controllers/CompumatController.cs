@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
+using API.Services;
 
 namespace API.Controllers
 {
@@ -9,54 +10,50 @@ namespace API.Controllers
     public class CompumatController: ControllerBase
     {
         private readonly ILogger<MapController> _logger;
+        private readonly CompumatService _compumatService;
 
-        private Compumat[] compumats =  new Compumat[]
-        { 
-            new Compumat{
-            Id = "01",
-            Name = "Automat ved vandland",
-            Latitude = 55.11404492554651,
-            Longitude = 9.787099052273176,
-            Type = Compumat.CompumatType.VENDINGMACHINE
-            },
-            new Compumat{
-            Id = "02",
-            Name = "Gate ved hovedbygning",
-            Latitude = 55.11404492554651,
-            Longitude = 9.787099052273176,
-            Type = Compumat.CompumatType.GATE
-            },
-            new Compumat{
-            Id = "03",
-            Name = "Gate ved vandland",
-            Latitude = 55.11404492554651,
-            Longitude = 9.787099052273176,
-            Type = Compumat.CompumatType.GATE
-            },
-            new Compumat{
-            Id = "04",
-            Name = "Automat ved hovedbygning",
-            Latitude = 55.11404492554651,
-            Longitude = 9.787099052273176,
-            Type = Compumat.CompumatType.VENDINGMACHINE
-            }
-        };
-
-        public CompumatController(ILogger<MapController> logger)
+        public CompumatController(ILogger<MapController> logger, CompumatService compumatService)
         {
             _logger = logger;
+            _compumatService = compumatService;
         }
 
-        [HttpGet("{id}/Compumat")]
-        public Compumat Get(string id)
+        [HttpGet("ReadOne")]
+        public async Task<IActionResult> ReadOne(string id)
         {
-            return this.compumats.First<Compumat>(obj => (String.Compare(obj.Id, id) == 0));
+            Compumat result = await _compumatService.GetCompumat(id);
+            return Ok(result);
+        }
+        
+        [HttpGet("ReadAll")]
+        public async Task<List<Compumat>> ReadAll()
+        {
+            List<Compumat> result = await _compumatService.GetAllCompumats();
+            return result;
         }
 
-        [HttpGet("/Compumats")]
-        public Compumat[] GetAll()
+
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create(Compumat compumat)
         {
-            return compumats;
+           Compumat result = await _compumatService.CreateCompumat(compumat);
+            return Created("Create", result);
         }
+
+        [HttpPut("Update")]
+        public async Task<IActionResult> Update([FromBody]Compumat compumat)
+        {
+            Compumat result = await _compumatService.UpdateCompumat(compumat);
+            return Ok(result);
+        }
+
+        [HttpDelete("Delete")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            string result = await _compumatService.DeleteCompumat(id);
+            if (result == null) return NotFound(id);
+            return Ok(result);
+        }
+
     }
 }

@@ -15,6 +15,12 @@ builder.Services.AddCors(o => o.AddPolicy("myPolicy", builder => {
 
 builder.Services.AddSingleton<IconRepository>();
 builder.Services.AddSingleton<IconService>();
+builder.Services.AddSingleton<CompumatRepository>();
+builder.Services.AddSingleton<CompumatService>();
+builder.Services.AddSingleton<MapRepository>();
+builder.Services.AddSingleton<MapService>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

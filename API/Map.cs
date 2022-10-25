@@ -2,7 +2,7 @@
 {
     public class Map
     {
-        public string? Id { get; set; }
+        public int? Id { get; set; }
 
         public string? CampSiteName { get; set; }
 

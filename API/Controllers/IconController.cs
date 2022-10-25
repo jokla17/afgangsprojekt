@@ -12,11 +12,6 @@ namespace API.Controllers
         private readonly ILogger<IconController> _logger;
         private readonly IconService _iconService;
 
-        //private IconController[] icons = new IconController[]
-        //{
-
-        //}
-
         public IconController(ILogger<IconController> logger, IconService iconService)
         {
             _logger = logger;
@@ -35,5 +30,7 @@ namespace API.Controllers
         {
             return _iconService.readSvgFiles();
         }
+
+        
     }
 }
