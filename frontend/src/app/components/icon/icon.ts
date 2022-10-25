@@ -1,5 +1,6 @@
+import { CompumatType } from "../compumat/compumatType.enum";
+
 export interface Icon {
-  id: string,
-  name: string,
-  xmlIcon: XMLDocument
+  type: CompumatType
+  iconPath: string,
 }

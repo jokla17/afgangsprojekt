@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CompumatType } from '../compumat/compumatType.enum';
+import { Icon } from './icon';
+import { IconService } from './icon.service';
 
 @Component({
   selector: 'app-icon',
@@ -7,13 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconComponent implements OnInit {
 
-  constructor() { }
+  @Input() type: CompumatType | undefined;
+  icon: Icon;
+  fillColor = '#7CFC00';
+
+  constructor(
+    private iconService: IconService,
+  ) { }
 
   ngOnInit(): void {
+    this.icon = this.iconService.getIcon(this.type);
   }
 
+  getIconPath(): string{
+    return this.icon.iconPath;
+  }
 
-  // Get icons
+  rotateArm(): void {
+    if(this.type == CompumatType.GATE){
 
-  // Get icon
+    }
+  }
+
+  getColor(): string {
+    return this.fillColor;
+  }
 }
