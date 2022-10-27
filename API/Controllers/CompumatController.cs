@@ -22,21 +22,23 @@ namespace API.Controllers
         public async Task<IActionResult> ReadOne(int id)
         {
             Compumat result = await _compumatService.GetCompumat(id);
+            if (result == null) return NotFound();
             return Ok(result);
         }
         
         [HttpGet("ReadAll")]
-        public async Task<List<Compumat>> ReadAll()
+        public async Task<IActionResult> ReadAll()
         {
             List<Compumat> result = await _compumatService.GetAllCompumats();
-            return result;
+            if (result == null) return NotFound();
+            return Ok(result);
         }
 
 
         [HttpPost("Create")]
         public async Task<IActionResult> Create(Compumat compumat)
         {
-           Compumat result = await _compumatService.CreateCompumat(compumat);
+            Compumat result = await _compumatService.CreateCompumat(compumat);
             return Created("Create", result);
         }
 

@@ -5,23 +5,26 @@ namespace API.Repositories
 {
     public class CompumatRepository
     {
-
-        SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-P74EPR6\\SQLEXPRESS;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection sqlConnection = new SqlConnection(API.ConnectionString.GetConnectionString());
 
         //read one from table
         public async Task<Compumat> GetCompumat(int id)
-            {
-                sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM db.dbo.Compumat WHERE Id = @Id", sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@Id", id);
-                SqlDataReader sqlDataReader = await sqlCommand.ExecuteReaderAsync();
-                Compumat result = new Compumat();
-                while (sqlDataReader.Read())
-                {
-                    result = ParseCompumat(sqlDataReader);
-                }
+        {
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM db.dbo.Compumat WHERE Id = @Id", sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@Id", id);
+            SqlDataReader sqlDataReader = await sqlCommand.ExecuteReaderAsync();
+            if (!sqlDataReader.HasRows) {
                 sqlConnection.Close();
-                return result;
+                return null;
+            }
+            Compumat result = new Compumat();
+            while (sqlDataReader.Read())
+            {
+                result = ParseCompumat(sqlDataReader);
+            }
+            sqlConnection.Close();
+            return result;
         }
 
         //read all from table
@@ -47,11 +50,12 @@ namespace API.Repositories
         {
             SqlDataAdapter sql = new SqlDataAdapter();
             sqlConnection.Open();
-            SqlCommand sqlCommand = new SqlCommand("INSERT INTO db.dbo.Compumat (Name, Longitude, Latitude, Type) OUTPUT INSERTED.* VALUES (@Name, @Longitude, @Latitude, @Type)", sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("INSERT INTO db.dbo.Compumat (Name, Latitude, Longitude, Type, Status) OUTPUT INSERTED.* VALUES (@Name, @Longitude, @Latitude, @Type, @Status)", sqlConnection);
             sqlCommand.Parameters.AddWithValue("@Name", compumat.Name);
             sqlCommand.Parameters.AddWithValue("@Longitude", compumat.Longitude);
             sqlCommand.Parameters.AddWithValue("@Latitude", compumat.Latitude);
             sqlCommand.Parameters.AddWithValue("@Type", (int)compumat.Type);
+            sqlCommand.Parameters.AddWithValue("@Status", compumat.Status);
             sql.UpdateCommand = sqlCommand;
             SqlDataReader sqlDataReader = await sqlCommand.ExecuteReaderAsync();
             //connection lukker ikke hvis der opstår en fejl
@@ -69,12 +73,13 @@ namespace API.Repositories
         {
             SqlDataAdapter sql = new SqlDataAdapter();
             sqlConnection.Open();
-            SqlCommand sqlCommand = new SqlCommand("UPDATE db.dbo.Compumat SET Name = @Name, Longitude = @Longitude, Latitude = @Latitude, Type = @Type WHERE Id = @Id", sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("UPDATE db.dbo.Compumat SET Name = @Name, Latitude = @Latitude, Longitude = @Longitude, Type = @Type, Status = @Status WHERE Id = @Id", sqlConnection);
             sqlCommand.Parameters.AddWithValue("@Id", compumat.Id);
             sqlCommand.Parameters.AddWithValue("@Name", compumat.Name);
-            sqlCommand.Parameters.AddWithValue("@Longitude", compumat.Longitude);
             sqlCommand.Parameters.AddWithValue("@Latitude", compumat.Latitude);
+            sqlCommand.Parameters.AddWithValue("@Longitude", compumat.Longitude);
             sqlCommand.Parameters.AddWithValue("@Type", (int)compumat.Type);
+            sqlCommand.Parameters.AddWithValue("@Status", compumat.Status);
             sql.UpdateCommand = sqlCommand;
             var resp = await sqlCommand.ExecuteNonQueryAsync();
             sqlConnection.Close();
@@ -102,9 +107,10 @@ namespace API.Repositories
             Compumat compumat = new Compumat();
             compumat.Id = sqlDataReader.GetInt32("Id");
             compumat.Name = sqlDataReader["Name"].ToString();
-            compumat.Longitude = sqlDataReader.GetDouble("Longitude");
             compumat.Latitude = sqlDataReader.GetDouble("Latitude");
+            compumat.Longitude = sqlDataReader.GetDouble("Longitude");
             compumat.Type = (Compumat.CompumatType)sqlDataReader.GetInt32("Type");
+            compumat.Status = sqlDataReader["Status"].ToString();
             return compumat;
         }
     }
