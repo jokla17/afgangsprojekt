@@ -5,8 +5,11 @@ namespace API.Repositories
 {
     public class MapRepository
     {
-
-        SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-P74EPR6\\SQLEXPRESS;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        // Jonas' connection string:
+        SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-7J4LRN9\\SQLEXPRESS;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        
+        // Andreas' connection string: 
+        //SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-P74EPR6\\SQLEXPRESS;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         //read one from table
         public async Task<Map> GetMap(int id)
