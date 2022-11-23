@@ -1,5 +1,4 @@
 ﻿using API.Repositories;
-using Microsoft.AspNetCore.Mvc;
 
 namespace API.Services
 {
@@ -50,5 +49,6 @@ namespace API.Services
         {
             return await _compumatRepository.DeleteCompumat(id);
         }
+
     }
 }

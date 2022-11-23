@@ -13,7 +13,13 @@ namespace API.Repositories
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand("SELECT * FROM db.dbo.Site WHERE Id = @Id", sqlConnection);
             sqlCommand.Parameters.AddWithValue("@Id", id);
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            SqlDataReader sqlDataReader = await sqlCommand.ExecuteReaderAsync();
+
+            if (!sqlDataReader.HasRows) {
+                sqlConnection.Close();
+                return null;
+            }
+
             Map result = new Map();
             while (sqlDataReader.Read())
             {
@@ -30,13 +36,16 @@ namespace API.Repositories
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand("SELECT * FROM db.dbo.Site", sqlConnection);
             SqlDataReader sqlDataReader = await sqlCommand.ExecuteReaderAsync();
+            sqlConnection.Close();
+
+            if (!sqlDataReader.HasRows) return null;
+
             while (sqlDataReader.Read())
             {
                 Map compumat = new Map();
                 compumat = ParseMap(sqlDataReader);
                 maps.Add(compumat);
             }
-            sqlConnection.Close();
             return maps;
         }
 
@@ -99,7 +108,7 @@ namespace API.Repositories
         {
             Map map = new Map();
             map.Id = sqlDataReader.GetInt32("Id");
-            map.CampSiteName = sqlDataReader["CampSiteName"].ToString();
+            map.CampSiteName = sqlDataReader["CampSiteName"].ToString()?.Trim();
             map.Latitude = sqlDataReader.GetDouble("Latitude");
             map.Longitude = sqlDataReader.GetDouble("Longitude");
             return map;

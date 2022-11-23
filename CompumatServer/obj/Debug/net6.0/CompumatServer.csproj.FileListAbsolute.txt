@@ -1,0 +1,17 @@
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\CompumatServer.csproj.AssemblyReference.cache
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\CompumatServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\CompumatServer.AssemblyInfoInputs.cache
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\CompumatServer.AssemblyInfo.cs
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\CompumatServer.csproj.CoreCompileInputs.cache
+D:\GitHub\afgangsprojekt\CompumatServer\bin\Debug\net6.0\CompumatServer.exe
+D:\GitHub\afgangsprojekt\CompumatServer\bin\Debug\net6.0\CompumatServer.deps.json
+D:\GitHub\afgangsprojekt\CompumatServer\bin\Debug\net6.0\CompumatServer.runtimeconfig.json
+D:\GitHub\afgangsprojekt\CompumatServer\bin\Debug\net6.0\CompumatServer.dll
+D:\GitHub\afgangsprojekt\CompumatServer\bin\Debug\net6.0\CompumatServer.pdb
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\CompumatServer.dll
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\refint\CompumatServer.dll
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\CompumatServer.pdb
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\CompumatServer.genruntimeconfig.cache
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\ref\CompumatServer.dll
+D:\GitHub\afgangsprojekt\CompumatServer\bin\Debug\net6.0\RabbitMQ.Client.dll
+D:\GitHub\afgangsprojekt\CompumatServer\obj\Debug\net6.0\CompumatServer.csproj.CopyComplete

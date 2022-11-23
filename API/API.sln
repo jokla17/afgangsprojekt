@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API.csproj", "{5008F
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "..\Database\Database.sqlproj", "{976F9016-2455-4F5A-AF19-59FC82F4261A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompumatServer", "..\CompumatServer\CompumatServer.csproj", "{06CDD044-7604-4E2D-A382-6E8AE7C0D29F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{976F9016-2455-4F5A-AF19-59FC82F4261A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{976F9016-2455-4F5A-AF19-59FC82F4261A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{976F9016-2455-4F5A-AF19-59FC82F4261A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{06CDD044-7604-4E2D-A382-6E8AE7C0D29F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CDD044-7604-4E2D-A382-6E8AE7C0D29F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CDD044-7604-4E2D-A382-6E8AE7C0D29F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CDD044-7604-4E2D-A382-6E8AE7C0D29F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

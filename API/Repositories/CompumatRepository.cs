@@ -34,6 +34,10 @@ namespace API.Repositories
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand("SELECT * FROM db.dbo.Compumat", sqlConnection);
             SqlDataReader sqlDataReader = await sqlCommand.ExecuteReaderAsync();
+            if (!sqlDataReader.HasRows) {
+                sqlConnection.Close();
+                return null;
+            }
             while (sqlDataReader.Read())
             {
                 Compumat compumat = new Compumat();
@@ -58,7 +62,10 @@ namespace API.Repositories
             sqlCommand.Parameters.AddWithValue("@Status", compumat.Status);
             sql.UpdateCommand = sqlCommand;
             SqlDataReader sqlDataReader = await sqlCommand.ExecuteReaderAsync();
-            //connection lukker ikke hvis der opstår en fejl
+            if (!sqlDataReader.HasRows) {
+                sqlConnection.Close();
+                return null;
+            }
             Compumat result = new Compumat();
             while (sqlDataReader.Read())
             {
@@ -82,12 +89,19 @@ namespace API.Repositories
             sqlCommand.Parameters.AddWithValue("@Status", compumat.Status);
             sql.UpdateCommand = sqlCommand;
             var resp = await sqlCommand.ExecuteNonQueryAsync();
-            sqlConnection.Close();
+
+            if (resp < 1) {
+                sqlConnection.Close();
+                return null;
+            }
+
             Compumat result = new Compumat();
             if(resp > 0)
             {
+               sqlConnection.Close();
                result = await GetCompumat((int)compumat.Id);
             }
+
             return result;
         }
 
@@ -106,11 +120,11 @@ namespace API.Repositories
         {
             Compumat compumat = new Compumat();
             compumat.Id = sqlDataReader.GetInt32("Id");
-            compumat.Name = sqlDataReader["Name"].ToString();
+            compumat.Name = sqlDataReader["Name"].ToString()?.Trim();
             compumat.Latitude = sqlDataReader.GetDouble("Latitude");
             compumat.Longitude = sqlDataReader.GetDouble("Longitude");
             compumat.Type = (Compumat.CompumatType)sqlDataReader.GetInt32("Type");
-            compumat.Status = sqlDataReader["Status"].ToString();
+            compumat.Status = sqlDataReader["Status"].ToString()?.Trim();
             return compumat;
         }
     }

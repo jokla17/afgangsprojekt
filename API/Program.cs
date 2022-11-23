@@ -1,5 +1,7 @@
 using API.Repositories;
 using API.Services;
+using API.Hubs;
+using API.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +21,10 @@ builder.Services.AddSingleton<CompumatRepository>();
 builder.Services.AddSingleton<CompumatService>();
 builder.Services.AddSingleton<MapRepository>();
 builder.Services.AddSingleton<MapService>();
+builder.Services.AddSingleton<CommunicationService>();
+builder.Services.AddSingleton<RabbitService>();
 
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -36,5 +41,6 @@ app.UseCors("myPolicy");
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<CompumatHub>("/compumatHub");
 
 app.Run();
