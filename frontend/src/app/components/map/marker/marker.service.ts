@@ -1,15 +1,19 @@
 /// <reference path="../../../../../typings/index.d.ts" />
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { Compumat } from '../../compumat/compumat';
 import * as L from 'leaflet';
 import { CompumatType } from '../../compumat/compumatType.enum';
 import { Icons } from '../../icon/icons.enum';
+import { CompumatService } from '../../compumat/compumat.service';
+import { MapComponent } from '../map.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MarkerService {
   markerStyle = `stroke: blue`;
+
+  iconTestId;
 
   iconColors = {
     ok: 'green',
@@ -18,7 +22,7 @@ export class MarkerService {
     offline: 'gray',
   };
 
-  compumats: Compumat[] = [
+  testCompumats: Compumat[] = [
     {
       icon: null,
       id: '01',
@@ -48,7 +52,11 @@ export class MarkerService {
     },
   ];
 
-  constructor() {}
+  compumats: Compumat[] = [];
+
+  constructor(
+    private compumatService: CompumatService
+  ) {}
 
   makeCompumatMarkers(map: L.Map): void {
     for (let c of this.compumats) {
@@ -72,7 +80,15 @@ export class MarkerService {
     }
   }
 
+  loadMarkers(map: L.Map): void {
+    this.compumatService.getCompumats().subscribe((compumats) => {
+      this.compumats = compumats;
+      this.makeCustomCircleMarkers(map);
+    });
+  }
+
   makeCustomCircleMarkers(map: L.Map): void {
+    //TODO: remove trim from c.status
     for (let c of this.compumats) {
       let iconSettings = {
         mapIconUrl: `
@@ -81,7 +97,7 @@ export class MarkerService {
             style="height: 4rem; width: 4rem; transform:scale(0.7)">
             <use
               xlink:href="${Icons[CompumatType[c.type]]}"
-              style="stroke:${this.iconColors[c.status]}"
+              style="stroke:${this.iconColors[c.status.trim()]}"
             ></use>
           </svg>
         `,
@@ -95,11 +111,17 @@ export class MarkerService {
         popupAnchor: [65, 36],
       });
 
-      //let popup = L.popup().setContent(JSON.stringify(c, null, "\n"));
-      let compumatText = JSON.stringify(c, null, "<br>");
-      let popup = L.popup().setContent(
-        `<div>${compumatText}</div>`
-      );
+      let popup = L.popup().setContent(`
+        <div>
+          <h3>${c.name}</h3>
+          <p>Id: ${c.id}</p>
+          <p>Type: ${CompumatType[c.type]}</p>
+          <p>Status: ${c.status}</p>
+          <button (click)="testButton()"> Click for more details</button>
+        </div>
+      `);
+
+
 
       let icon = L.marker([c.latitude, c.longitude], {
         icon: svgIcon,
@@ -108,7 +130,21 @@ export class MarkerService {
         className: 'customPopup'
       });
 
+      icon.on('click', () => {
+        this.iconTestId = c.id;
+        console.log(this.iconTestId);
+      });
+
+
+
       icon.addTo(map);
+
     }
   }
+
+  getCurrentCompumat(): Compumat {
+    return this.compumats.find((c) => c.id === this.iconTestId);
+  }
+
+
 }

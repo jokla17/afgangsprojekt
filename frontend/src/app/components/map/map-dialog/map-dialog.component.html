@@ -1,0 +1,38 @@
+<!-- <nav mat-tab-nav-bar>
+  <a *ngFor="let link of navLinks" mat-tab-link
+    [active]="isViewInitialized"
+    [routerLink]="link.link"
+    [data] = "data"
+    routerLinkActive>
+    {{link.name}}
+  </a>
+</nav>
+<router-outlet></router-outlet> -->
+<div class="container">
+  <mat-dialog-content>
+    <mat-tab-group [selectedIndex]="selectedIndex" [dynamicHeight]="true">
+      <mat-tab label="Info">
+        <app-info [compumat]="data"></app-info>
+      </mat-tab>
+
+      <mat-tab label="Commands">
+        <app-command [compumat]="data" (isInputValid)="onFormChange($event)"></app-command>
+      </mat-tab>
+
+      <mat-tab label="Configuration">
+        <app-configuration ></app-configuration>
+      </mat-tab>
+
+    </mat-tab-group>
+  </mat-dialog-content>
+</div>
+
+<mat-dialog-actions align="end">
+  <div class="actionsLeft">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  </div>
+
+  <div class="actionsRight">
+    <button mat-raised-button color="accent" (click)="runCommand()" [disabled]="!isFormValid">Run</button>
+  </div>
+</mat-dialog-actions>

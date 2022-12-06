@@ -1,0 +1,59 @@
+.container{
+  min-height: 93%;
+  min-width: 40%;
+}
+
+.mat-tab-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-tab-header {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.mat-tab-body-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-grow: 1;
+}
+
+.mat-tab-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.mat-tab-body-active {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1;
+  flex-grow: 1;
+}
+
+.mat-tab-body-content {
+  height: 100%;
+  min-width: 100%;
+  overflow: auto;
+}
+
+.actionsLeft{
+  min-width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.actionsRight{
+  min-width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
