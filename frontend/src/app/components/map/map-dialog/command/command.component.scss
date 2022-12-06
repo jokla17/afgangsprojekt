@@ -1,0 +1,39 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  .content{
+    flex-direction: row;
+    display: flex;
+    min-height: 90%;
+    .buttonSection{
+      flex-direction: column;
+      display: flex;
+      min-width: 30%;
+      margin-right: 1.5rem;
+      button{
+        margin-top: 1rem;
+      }
+    }
+    .formSection{
+      flex-direction: column;
+      display: flex;
+      margin-top: 1rem;
+    }
+  }
+}
+
+
+mat-form-field{
+  width: 100%;
+}
+
+.actionButton{
+  flex-direction: row;
+  display: flex;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.runButton{
+  margin-left: 80%;
+}

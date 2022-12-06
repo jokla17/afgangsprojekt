@@ -1,0 +1,49 @@
+<table mat-table [dataSource]="compumatArray">
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let c"> {{c.data.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let c"> {{c.data.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Latitude">
+    <th mat-header-cell *matHeaderCellDef> Latitude </th>
+    <td mat-cell *matCellDef="let c"> {{c.data.latitude}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Longitude">
+    <th mat-header-cell *matHeaderCellDef> Longitude </th>
+    <td mat-cell *matCellDef="let c"> {{c.data.longitude}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let c"> {{c.data.status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Type">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let c"> {{c.data.type}} </td>
+  </ng-container>
+
+<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+<tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+</table>
+
+
+
+
+
+
+
+
+<!-- <div>{{compumat.data.id}}</div>
+<div>{{compumat.data.name}}</div>
+<div>{{compumat.data.latitude}}</div>
+<div>{{compumat.data.longitude}}</div>
+<div>{{compumat.data.status}}</div>
+<div>{{compumat.data.type}}</div> -->
+

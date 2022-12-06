@@ -5,6 +5,10 @@ import { Compumat } from '../compumat/compumat';
 import { CompumatType } from '../compumat/compumatType.enum';
 import * as L from 'leaflet';
 import { MarkerService } from './marker/marker.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { CompumatService } from '../compumat/compumat.service';
+import { MapDialogComponent } from './map-dialog/map-dialog.component';
+import { Router } from '@angular/router';
 
 let iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
@@ -28,12 +32,16 @@ L.Marker.prototype.options.icon = iconDefault;
 export class MapComponent implements OnInit, AfterViewInit {
   constructor(
     private mapService: MapService,
+    private compumatService: CompumatService,
     private markerService: MarkerService,
+    private dialog: MatDialog,
+    private router: Router
   ) {}
 
 
   public map: L.Map;
   mapData: MapData;
+  markerservice: MarkerService;
 
   compumats: Compumat[] = [
     {
@@ -47,6 +55,12 @@ export class MapComponent implements OnInit, AfterViewInit {
     },
   ];
 
+  returnCurrentCompumat(): Compumat {
+    let currentId = this.markerService.getCurrentCompumat();
+    return currentId;
+  }
+
+
   ngOnInit(): void {
   }
 
@@ -54,7 +68,7 @@ export class MapComponent implements OnInit, AfterViewInit {
       this.mapService.getMapData(1).subscribe((mapData) => {
         this.mapData = mapData;
       this.initMap();
-      this.markerService.makeCustomCircleMarkers(this.map);
+      this.markerService.loadMarkers(this.map);
       });
   }
 
@@ -79,5 +93,17 @@ export class MapComponent implements OnInit, AfterViewInit {
     tiles.addTo(this.map);
     this.map.setZoom(17);
   }
+
+  openMoreDetails(): void {
+    const dialogRef = this.dialog.open(MapDialogComponent, {
+      width: '700px',
+      height: '700px',
+      data: {data: this.returnCurrentCompumat()},
+      });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.compumats = result;
+    });
+}
 
 }
