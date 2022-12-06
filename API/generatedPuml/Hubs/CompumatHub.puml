@@ -1,0 +1,8 @@
+@startuml
+class CompumatHub {
+    + <<async>> SendMessage(message:string) : Task
+    + <<async>> SendCompumat(compumat:Compumat) : Task
+    + <<async>> SendCompumats(compumats:List<Compumat>) : Task
+}
+Hub <|-- CompumatHub
+@enduml

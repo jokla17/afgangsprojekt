@@ -1,0 +1,21 @@
+@startuml
+class CompumatController {
+    + CompumatController(logger:ILogger<MapController>, compumatService:CompumatService, communicationService:CommunicationService, rabbitService:RabbitService)
+    + <<async>> ReadOne(id:int) : Task<IActionResult>
+    + <<async>> ReadAll() : Task<IActionResult>
+    + <<async>> Create(compumat:Compumat) : Task<IActionResult>
+    + <<async>> Update(compumat:Compumat) : Task<IActionResult>
+    + <<async>> Delete(id:string) : Task<IActionResult>
+    + <<async>> TestCPS(message:Dictionary<string,string>) : Task<IActionResult>
+    + <<async>> TestCPSPoll() : Task<IActionResult>
+    + <<async>> StopPolling() : Task<IActionResult>
+    + <<async>> TestRabbit(tasks:string[]) : Task<IActionResult>
+}
+class "ILogger`1"<T> {
+}
+ControllerBase <|-- CompumatController
+CompumatController --> "_logger<MapController>" "ILogger`1"
+CompumatController --> "_compumatService" CompumatService
+CompumatController --> "_communicationService" CommunicationService
+CompumatController --> "_rabbitService" RabbitService
+@enduml

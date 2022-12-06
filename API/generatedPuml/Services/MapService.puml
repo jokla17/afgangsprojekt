@@ -1,0 +1,11 @@
+@startuml
+class MapService {
+    + MapService(mapRepository:MapRepository)
+    + <<async>> GetMap(id:int) : Task<Map>
+    + <<async>> GetAllMaps() : Task<List<Map>>
+    + <<async>> CreateMap(map:Map) : Task<Map>
+    + <<async>> UpdateMap(map:Map) : Task<Map>
+    + <<async>> DeleteMap(id:string) : Task<string>
+}
+MapService --> "_mapRepository" MapRepository
+@enduml

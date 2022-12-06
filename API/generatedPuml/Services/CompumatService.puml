@@ -1,0 +1,12 @@
+@startuml
+class CompumatService {
+    - <<const>> pathToSvg : string = "C:\\Users\\themi\\OneDrive\\Skrivebord\\Github Afgangsprojekt\\afgangsprojekt\\API\\Icons\\"
+    + CompumatService(compumatRepository:CompumatRepository)
+    + <<async>> GetCompumat(id:int) : Task<Compumat>
+    + <<async>> GetAllCompumats() : Task<List<Compumat>>
+    + <<async>> CreateCompumat(compumat:Compumat) : Task<Compumat>
+    + <<async>> UpdateCompumat(compumat:Compumat) : Task<Compumat>
+    + <<async>> DeleteCompumat(id:string) : Task<string>
+}
+CompumatService --> "_compumatRepository" CompumatRepository
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+!include .\\.\Compumat.puml
+!include .\\.\ConnectionString.puml
+!include .\\.\Icon.puml
+!include .\\.\Map.puml
+!include .\\.\Program.puml
+!include .\\.\WeatherForecast.puml
+!include .\\.\Controllers\CompumatController.puml
+!include .\\.\Controllers\IconController.puml
+!include .\\.\Controllers\MapController.puml
+!include .\\.\Controllers\WeatherForecastController.puml
+!include .\\.\Hubs\CompumatHub.puml
+!include .\\.\RabbitMQ\RabbitService.puml
+!include .\\.\Repositories\CompumatRepository.puml
+!include .\\.\Repositories\IconRepository.puml
+!include .\\.\Repositories\MapRepository.puml
+!include .\\.\Services\CommunicationService.puml
+!include .\\.\Services\CompumatService.puml
+!include .\\.\Services\IconService.puml
+!include .\\.\Services\MapService.puml
+!include .\\.\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\.\obj\Debug\net6.0\API.AssemblyInfo.puml
+!include .\\.\obj\Debug\net6.0\API.GlobalUsings.g.puml
+!include .\\.\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.puml
+!include .\\.\obj\Release\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\.\obj\Release\net6.0\API.AssemblyInfo.puml
+!include .\\.\obj\Release\net6.0\API.GlobalUsings.g.puml
+@enduml

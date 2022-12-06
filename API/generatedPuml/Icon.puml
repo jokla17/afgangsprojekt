@@ -1,0 +1,7 @@
+@startuml
+class Icon {
+    + Id : int? <<get>> <<set>>
+    + Name : string? <<get>> <<set>>
+    + SvgIcon : string? <<get>> <<set>>
+}
+@enduml

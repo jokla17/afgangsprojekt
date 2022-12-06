@@ -1,0 +1,10 @@
+@startuml
+class WeatherForecastController {
+    + WeatherForecastController(logger:ILogger<WeatherForecastController>)
+    + Get() : IEnumerable<WeatherForecast>
+}
+class "ILogger`1"<T> {
+}
+ControllerBase <|-- WeatherForecastController
+WeatherForecastController --> "_logger<WeatherForecastController>" "ILogger`1"
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class RabbitService {
+    + RabbitService()
+    - {static} GetMessage(args:string[]) : string
+    + SendTask(args:string[]) : void
+    + Send() : void
+    + Receive() : void
+    - GetTimestamp() : string
+}
+RabbitService --> "_factory" ConnectionFactory
+RabbitService --> "_connection" IConnection
+RabbitService --> "_channel" IModel
+@enduml

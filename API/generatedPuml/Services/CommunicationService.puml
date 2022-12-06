@@ -1,0 +1,20 @@
+@startuml
+class CommunicationService {
+    <<const>> PORT_NO : int = 5000
+    <<const>> SERVER_IP : string = "127.0.0.1"
+    <<const>> DELAY_MS : int = 2000
+    + CommunicationService()
+    + SendObject(message:Dictionary<string,string>) : string
+    + SendMessage(message:string) : string
+    + <<async>> PollServer() : void
+    + StopPolling() : void
+    - ParseCompumat(compumatList:string) : List<Compumat>
+}
+class XmlHelper <<static>> {
+    + {static} FromXElement(xElement:XElement) : T
+    + {static} ToXElement(obj:object) : XElement
+}
+CommunicationService --> "tcpClient" TcpClient
+CommunicationService --> "_cts" CancellationTokenSource
+CommunicationService --> "hub" CompumatHub
+@enduml

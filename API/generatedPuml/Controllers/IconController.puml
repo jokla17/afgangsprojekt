@@ -1,0 +1,12 @@
+@startuml
+class IconController {
+    + IconController(logger:ILogger<IconController>, iconService:IconService)
+    + Get() : string
+    + GetFiles() : List<Icon>
+}
+class "ILogger`1"<T> {
+}
+ControllerBase <|-- IconController
+IconController --> "_logger<IconController>" "ILogger`1"
+IconController --> "_iconService" IconService
+@enduml

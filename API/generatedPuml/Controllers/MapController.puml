@@ -1,0 +1,15 @@
+@startuml
+class MapController {
+    + MapController(logger:ILogger<MapController>, mapService:MapService)
+    + <<async>> ReadOne(id:int) : Task<IActionResult>
+    + <<async>> ReadAll() : Task<List<Map>>
+    + <<async>> Create(map:Map) : Task<IActionResult>
+    + <<async>> Update(map:Map) : Task<IActionResult>
+    + <<async>> Delete(id:string) : Task<IActionResult>
+}
+class "ILogger`1"<T> {
+}
+ControllerBase <|-- MapController
+MapController --> "_logger<MapController>" "ILogger`1"
+MapController --> "_mapService" MapService
+@enduml

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="API.Controllers.CompumatController">
+    <Position X="8" Y="0.5" Width="11" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAEAgAAQAAIAFKAEAAAABAAAIAAAg=</HashCode>
+      <FileName>Controllers\CompumatController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Controllers.MapController">
+    <Position X="0.5" Y="4.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAEAAAAAAAIAEAAEAAAAAAAAIAACA=</HashCode>
+      <FileName>Controllers\MapController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Hubs.CompumatHub">
+    <Position X="19.25" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAICAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Hubs\CompumatHub.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.RabbitMQ.RabbitService">
+    <Position X="17.25" Y="9.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AGAAAAAAAAAAAAAAAEAAEAAAAAgAAAAQAAACAAAABAA=</HashCode>
+      <FileName>RabbitMQ\RabbitService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Repositories.CompumatRepository">
+    <Position X="8" Y="8" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAIAAAAAAAAEQAIAAAAAABAAAA=</HashCode>
+      <FileName>Repositories\CompumatRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Repositories.MapRepository">
+    <Position X="0.5" Y="10.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEAAABAAAAAAABAAAAAAAAAAAEAAAEAAAAAAAEAA=</HashCode>
+      <FileName>Repositories\MapRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Services.CommunicationService">
+    <Position X="0.5" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAgCAAAAAAAQACAIgCAAIAIAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Services\CommunicationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Services.XmlHelper">
+    <Position X="17.25" Y="7.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Services\CommunicationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Services.CompumatService">
+    <Position X="8" Y="5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAQAIAAAQAABAAQA=</HashCode>
+      <FileName>Services\CompumatService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Services.MapService">
+    <Position X="0.5" Y="7.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAABAAAAAAABAAAAAAAAAAAAAAAEAAAAgAAEAA=</HashCode>
+      <FileName>Services\MapService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Compumat">
+    <Position X="5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="API.Compumat.CompumatType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Compumat.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAEAAAAAAAAAIAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Compumat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Compumats">
+    <Position X="12.75" Y="5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Compumat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.ConnectionString">
+    <Position X="17.25" Y="6.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConnectionString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="API.Map">
+    <Position X="4" Y="7.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAEAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9.75" />
+</ClassDiagram>

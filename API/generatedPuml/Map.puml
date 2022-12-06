@@ -1,0 +1,8 @@
+@startuml
+class Map {
+    + Id : int? <<get>> <<set>>
+    + CampSiteName : string? <<get>> <<set>>
+    + Latitude : double <<get>> <<set>>
+    + Longitude : double <<get>> <<set>>
+}
+@enduml

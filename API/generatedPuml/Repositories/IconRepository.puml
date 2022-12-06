@@ -1,0 +1,10 @@
+@startuml
+class IconRepository {
+    + GetAllIcons() : List<Icon>
+    + GetIcon(id:int) : Icon
+    + CreateIcon(icon:Icon) : void
+    + UpdateIcon(icon:Icon) : void
+    + DeleteIcon(id:string) : void
+}
+IconRepository o-> "sqlConnection" SqlConnection
+@enduml

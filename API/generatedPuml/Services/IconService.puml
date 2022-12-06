@@ -1,0 +1,13 @@
+@startuml
+class IconService {
+    - <<const>> pathToSvg : string = "C:\\Users\\themi\\OneDrive\\Skrivebord\\Github Afgangsprojekt\\afgangsprojekt\\API\\Icons\\"
+    + IconService(iconRepository:IconRepository)
+    + readSvgFile() : string
+    + readSvgFiles() : List<Icon>
+    + getIcon(id:int) : Icon
+    + createIcon(icon:Icon) : void
+    + updateIcon(icon:Icon) : void
+    + deleteIcon(id:string) : void
+}
+IconService --> "_iconRepository" IconRepository
+@enduml

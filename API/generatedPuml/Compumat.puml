@@ -1,0 +1,19 @@
+@startuml
+class Compumat {
+    + Id : int? <<get>> <<set>>
+    + Name : string? <<get>> <<set>>
+    + Latitude : double <<get>> <<set>>
+    + Longitude : double <<get>> <<set>>
+    + Status : string? <<get>> <<set>>
+}
+class Compumats {
+    + Compumats()
+    + compumats : List<Compumat>? <<get>> <<set>>
+}
+enum CompumatType {
+    VENDINGMACHINE= 1,
+    GATE= 2,
+}
+Compumat --> "Type" CompumatType
+Compumat +-- CompumatType
+@enduml
