@@ -11,9 +11,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddCors(o => o.AddPolicy("myPolicy", builder => {
-    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-}));
 
 builder.Services.AddSingleton<IconRepository>();
 builder.Services.AddSingleton<IconService>();
@@ -23,8 +20,12 @@ builder.Services.AddSingleton<MapRepository>();
 builder.Services.AddSingleton<MapService>();
 builder.Services.AddSingleton<CommunicationService>();
 builder.Services.AddSingleton<RabbitService>();
+builder.Services.AddSingleton<CompumatHub>();
 
 builder.Services.AddSignalR();
+builder.Services.AddCors(o => o.AddPolicy("myPolicy", builder => {
+    builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader().AllowCredentials();
+}));
 
 var app = builder.Build();
 

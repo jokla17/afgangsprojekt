@@ -18,8 +18,6 @@ namespace API.Services {
 
         public CommunicationService() { 
             this._cts = new CancellationTokenSource();
-            hub = new CompumatHub();
-
         }
 
         public string SendObject(Dictionary<string,string> message) {
@@ -72,7 +70,6 @@ namespace API.Services {
 
                     Debug.WriteLine(recTxt);
                     List<Compumat> compumats = ParseCompumat(recTxt);
-                    await this.hub.SendCompumats(compumats);
 
                     Thread.Sleep(DELAY_MS);
                     if (token.IsCancellationRequested) {

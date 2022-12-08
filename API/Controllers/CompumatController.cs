@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Cors;
 using API.Services;
 using API.RabbitMQ;
+using Microsoft.AspNetCore.SignalR;
+using API.Hubs;
 
 namespace API.Controllers
 {
@@ -11,16 +13,24 @@ namespace API.Controllers
     public class CompumatController: ControllerBase
     {
         private readonly ILogger<MapController> _logger;
+        private readonly CompumatHub _hub;
         private readonly CompumatService _compumatService;
         private readonly CommunicationService _communicationService;
         private readonly RabbitService _rabbitService;
 
-        public CompumatController(ILogger<MapController> logger, CompumatService compumatService, CommunicationService communicationService, RabbitService rabbitService)
+        public CompumatController(ILogger<MapController> logger, CompumatService compumatService, CommunicationService communicationService, RabbitService rabbitService, CompumatHub hub)
         {
             _logger = logger;
             _compumatService = compumatService;
             _communicationService = communicationService;
             _rabbitService = rabbitService;
+            _hub = hub;
+        }
+
+        [HttpGet("TestSignalR/{message}")]
+        public async Task<IActionResult> TestSignalR([FromRoute]string message) 
+        {
+            return Ok(_hub.TestSignalR(message).Result);
         }
 
         [HttpGet("ReadOne")]
@@ -45,6 +55,7 @@ namespace API.Controllers
         {
             Compumat result = await _compumatService.CreateCompumat(compumat);
             if (result == null) return NotFound();
+            await _hub.AddCompumat(result);
             return Created("Create", result);
         }
 
@@ -53,6 +64,7 @@ namespace API.Controllers
         {
             Compumat result = await _compumatService.UpdateCompumat(compumat);
             if (result == null) return NotFound();
+            await _hub.ChangeCompumat(result);
             return Ok(result);
         }
 
@@ -61,6 +73,7 @@ namespace API.Controllers
         {
             string result = await _compumatService.DeleteCompumat(id);
             if (result == null) return NotFound(id);
+            await _hub.RemoveCompumat(result);
             return Ok(result);
         }
 

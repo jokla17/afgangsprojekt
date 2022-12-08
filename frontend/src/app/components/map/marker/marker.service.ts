@@ -22,37 +22,8 @@ export class MarkerService {
     offline: 'gray',
   };
 
-  testCompumats: Compumat[] = [
-    {
-      icon: null,
-      id: '01',
-      latitude: 55.31404492554651,
-      longitude: 10.787099052273176,
-      name: 'Gate01',
-      status: 'ok',
-      type: CompumatType.GATE,
-    },
-    {
-      icon: null,
-      id: '02',
-      latitude: 55.31504492554651,
-      longitude: 10.787099052273176,
-      name: 'VendingMachine01',
-      status: 'error',
-      type: CompumatType.VENDINGMACHINE,
-    },
-    {
-      icon: null,
-      id: '03',
-      latitude: 55.31304492554651,
-      longitude: 10.787099052273176,
-      name: 'Gate02',
-      status: 'offline',
-      type: CompumatType.GATE,
-    },
-  ];
-
-  compumats: Compumat[] = [];
+  public compumats: Compumat[] = [];
+  private markers: L.Marker[] = [];
 
   constructor(
     private compumatService: CompumatService
@@ -80,15 +51,18 @@ export class MarkerService {
     }
   }
 
-  loadMarkers(map: L.Map): void {
-    this.compumatService.getCompumats().subscribe((compumats) => {
-      this.compumats = compumats;
-      this.makeCustomCircleMarkers(map);
-    });
+  loadMarkers(map: L.Map, compumats: Compumat[]): void {
+    this.compumats = compumats;
+    this.makeCustomCircleMarkers(map);
   }
 
   makeCustomCircleMarkers(map: L.Map): void {
     //TODO: remove trim from c.status
+    this.markers.forEach(marker => {
+      map.removeLayer(marker);
+    });
+    this.markers = [];
+
     for (let c of this.compumats) {
       let iconSettings = {
         mapIconUrl: `
@@ -135,10 +109,8 @@ export class MarkerService {
         console.log(this.iconTestId);
       });
 
-
-
+      this.markers.push(icon);
       icon.addTo(map);
-
     }
   }
 

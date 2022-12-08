@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { MapData } from './MapData';
 import { MapService } from './map.service';
 import { Compumat } from '../compumat/compumat';
@@ -9,6 +9,8 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { CompumatService } from '../compumat/compumat.service';
 import { MapDialogComponent } from './map-dialog/map-dialog.component';
 import { Router } from '@angular/router';
+import { SignalrService } from '../services/signalr.service';
+import { HttpClient } from '@angular/common/http';
 
 let iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
@@ -28,6 +30,7 @@ L.Marker.prototype.options.icon = iconDefault;
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MapComponent implements OnInit, AfterViewInit {
   constructor(
@@ -35,7 +38,10 @@ export class MapComponent implements OnInit, AfterViewInit {
     private compumatService: CompumatService,
     private markerService: MarkerService,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private signalRService: SignalrService,
+    private http: HttpClient,
+    private cd: ChangeDetectorRef,
   ) {}
 
 
@@ -43,32 +49,31 @@ export class MapComponent implements OnInit, AfterViewInit {
   mapData: MapData;
   markerservice: MarkerService;
 
-  compumats: Compumat[] = [
-    {
-      icon: null,
-      id: '01',
-      latitude: 55.31404492554651,
-      longitude: 10.787099052273176,
-      name: 'Gate01',
-      status: 'ok',
-      type: CompumatType.GATE,
-    },
-  ];
+  compumats: Compumat[] = [];
 
   returnCurrentCompumat(): Compumat {
     let currentId = this.markerService.getCurrentCompumat();
     return currentId;
   }
 
-
   ngOnInit(): void {
+    this.compumatService.compumatData.subscribe(compumats => {
+      this.compumats = compumats;
+      this.cd.markForCheck();
+    });
+    this.signalRService.startConnection();
+    this.signalRService.onDataUpdate(this.update.bind(this));
+  }
+
+  update(){
+    this.markerService.loadMarkers(this.map, this.compumats);
   }
 
   ngAfterViewInit(): void {
       this.mapService.getMapData(1).subscribe((mapData) => {
         this.mapData = mapData;
       this.initMap();
-      this.markerService.loadMarkers(this.map);
+      this.markerService.loadMarkers(this.map, this.compumats);
       });
   }
 
@@ -102,6 +107,7 @@ export class MapComponent implements OnInit, AfterViewInit {
       });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      // TODO: fix, so that any changes are actually sent to the API
       this.compumats = result;
     });
 }

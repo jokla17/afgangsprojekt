@@ -7,6 +7,8 @@ import { CompumatService } from './compumat.service';
   templateUrl: './compumat.component.html',
   styleUrls: ['./compumat.component.scss']
 })
+
+//TODO: Probably remove this component?
 export class CompumatComponent implements OnInit {
 
   @Input() compumat: Compumat;
@@ -17,9 +19,7 @@ export class CompumatComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("from compumat-component:");
-    console.log(this.compumat);
-    console.log("--------------------");
+
   }
 
   // Get one specific compumat-device
@@ -28,7 +28,7 @@ export class CompumatComponent implements OnInit {
     // Find index of compumat with given id in current list
     // Replace compumat and index with new compumat IF it exists
     // Else insert new compumat
-    this.compumatService.getIcon(id).subscribe(compuMat => {
+    this.compumatService.getCompumat(id).subscribe(compuMat => {
       let currentCompumat = this.compumatList.find(compuMat => compuMat.id == id);
       if (currentCompumat !== undefined){
         let compumatIndex = this.compumatList.indexOf(currentCompumat);
@@ -42,8 +42,8 @@ export class CompumatComponent implements OnInit {
   // Get list of all compumat devices
   getCompumats(): void {
     // Inserts all compumats into current list of compumats
-    this.compumatService.getIcons().subscribe(compuMats => {
-      this.compumatList = compuMats;
+    this.compumatService.getCompumats().subscribe(compumats => {
+      this.compumatList = compumats;
     });
   }
 
