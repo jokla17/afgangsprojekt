@@ -27,10 +27,11 @@ namespace API.Controllers
             _hub = hub;
         }
 
-        [HttpGet("TestSignalR/{message}")]
-        public async Task<IActionResult> TestSignalR([FromRoute]string message) 
+        [HttpPost("TestRabbit")]
+        public async Task<IActionResult> TestSignalR([FromBody]string[] bindingKeys) 
         {
-            return Ok(_hub.TestSignalR(message).Result);
+            _rabbitService.ReceiveTopic(bindingKeys);
+            return Ok();
         }
 
         [HttpGet("ReadOne")]
@@ -95,7 +96,7 @@ namespace API.Controllers
             return Ok();
         }
 
-        [HttpPost("TestRabbit")]
+        [HttpPost("TestRabbit2")]
         public async Task<IActionResult> TestRabbit(string[] tasks) {
             _rabbitService.SendTask(tasks);
             return Ok();

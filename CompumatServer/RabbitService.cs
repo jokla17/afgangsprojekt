@@ -12,6 +12,14 @@ namespace CompumatServer {
             _factory = new ConnectionFactory() { HostName = "localhost" };
         }
 
+        public void ParseMessage(string message) { // TODO: split message into its parts
+            throw new NotImplementedException();
+        }
+
+        private bool ShouldBroadcast(string message) { // TODO: figure out if it's a device we're interested in, and if it's a type of message we're interested in. Potentially which topic it should be broadcasted to?
+            throw new NotImplementedException();
+        }
+
         public void Send() {
             using (var connection = _factory.CreateConnection())
             using (var channel = connection.CreateModel()) {
@@ -88,6 +96,24 @@ namespace CompumatServer {
 
                 Console.WriteLine(GetTimestamp() + " Press [enter] to exit.");
                 Console.ReadLine();
+            }
+        }
+
+        public void Emit(string? routingKey, string message) {
+            var factory = new ConnectionFactory() { HostName = "localhost" };
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel()) {
+                channel.ExchangeDeclare(exchange: "topic_logs", type: "topic");
+                var rKey = routingKey != null ? routingKey : "anonymous.info";
+                var msg = message != null ? message : ":: No message provided";
+                var body = Encoding.UTF8.GetBytes(msg);
+                channel.BasicPublish(
+                    exchange: "topic_logs",
+                    routingKey: rKey,
+                    basicProperties: null,
+                    body: body
+                );
+                Console.WriteLine(" [x] Sent '{0}':'{1}'", rKey, msg);
             }
         }
 

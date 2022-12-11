@@ -73,7 +73,58 @@ namespace Server {
         }
 
         static void Main(string[] args) {
-            /*
+            MonitorLogService logService = new MonitorLogService();
+            logService.Start();
+            string input = null;
+            while(input == null) {
+                input = Console.ReadLine();
+                if (input != null) break;
+            }
+            /* Is able to emit messages through RabbitMQ
+            RabbitService rs = new RabbitService();
+            //rs.ReceiveTask();
+            string input1 = "";
+            string input2 = "";
+            Console.WriteLine("Now emitting every time you enter a message. Type 'q' to exit.");
+            while (input1 != "q" && input2 != "q") {
+                Console.WriteLine("Please enter the routing-key: ");
+                string routingKey = Console.ReadLine();
+                input1 = routingKey;
+                if (routingKey == "q") break;
+                Console.WriteLine("Please enter the message: ");
+                string message = Console.ReadLine();
+                input2 = message;
+                if (message == "q") break;
+
+                rs.Emit(routingKey, message); 
+            }*/
+        }
+
+        private static async void RandomizeDevices() {
+            foreach (Compumat device in compumats) {
+                Random r = new Random();
+                int nextStatusIndex = r.Next(0, 3);
+                device.Status = statusses[nextStatusIndex];
+                Console.WriteLine("Updated compumatstatus to " + device.Status);
+            }
+        }
+
+    }
+    public static class XmlHelper {
+        public static XElement ToXElement<T>(this object obj) {
+            XmlSerializer ser = new XmlSerializer(typeof(T));
+            XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
+            namespaces.Add("", "");
+            XDocument doc = new XDocument();
+            using (XmlWriter xw = doc.CreateWriter()) {
+                ser.Serialize(xw, obj, namespaces);
+                xw.Close();
+            }
+            return doc.Root;
+        }
+    }
+
+    /* PUT THIS IN MAIN() TO GENERATE COMPUMATS
             GenerateCompumats(100);
             IPAddress ipAddr = IPAddress.Parse(SERVER_IP);
             TcpListener listener = new TcpListener(ipAddr, PORT_NO);
@@ -114,31 +165,4 @@ namespace Server {
             listener.Stop();
             Console.ReadLine();
             */
-            RabbitService rs = new RabbitService();
-            rs.ReceiveTask();
-        }
-
-        private static async void RandomizeDevices() {
-            foreach (Compumat device in compumats) {
-                Random r = new Random();
-                int nextStatusIndex = r.Next(0, 3);
-                device.Status = statusses[nextStatusIndex];
-                Console.WriteLine("Updated compumatstatus to " + device.Status);
-            }
-        }
-
-    }
-    public static class XmlHelper {
-        public static XElement ToXElement<T>(this object obj) {
-            XmlSerializer ser = new XmlSerializer(typeof(T));
-            XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
-            namespaces.Add("", "");
-            XDocument doc = new XDocument();
-            using (XmlWriter xw = doc.CreateWriter()) {
-                ser.Serialize(xw, obj, namespaces);
-                xw.Close();
-            }
-            return doc.Root;
-        }
-    }
 }
