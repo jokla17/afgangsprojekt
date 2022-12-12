@@ -12,10 +12,6 @@ namespace CompumatServer {
             _factory = new ConnectionFactory() { HostName = "localhost" };
         }
 
-        public void ParseMessage(string message) { // TODO: split message into its parts
-            throw new NotImplementedException();
-        }
-
         private bool ShouldBroadcast(string message) { // TODO: figure out if it's a device we're interested in, and if it's a type of message we're interested in. Potentially which topic it should be broadcasted to?
             throw new NotImplementedException();
         }

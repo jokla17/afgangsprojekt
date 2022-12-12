@@ -69,7 +69,7 @@ namespace API.Services {
                     string recTxt = this.SendMessage("poll");
 
                     Debug.WriteLine(recTxt);
-                    List<Compumat> compumats = ParseCompumat(recTxt);
+                    List<Compumat> compumats = ParseCompumats(recTxt);
 
                     Thread.Sleep(DELAY_MS);
                     if (token.IsCancellationRequested) {
@@ -77,7 +77,28 @@ namespace API.Services {
                     }
                 }
             }, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
-            
+        }
+
+        public async Task<List<LogEntry>> GetLog() {
+            string recTxt = this.SendMessage("GetLog");
+
+            Debug.WriteLine(recTxt);
+            List<LogEntry> log = ParseLogEntries(recTxt);
+            return log;
+        }
+
+        public async Task<List<LogEntry>> GetCompumatLog(string compumatId) {
+            string recTxt = this.SendMessage($"GetCompumatLog:{compumatId}");
+
+            Debug.WriteLine(recTxt);
+            List<LogEntry> log = ParseLogEntries(recTxt);
+            List<LogEntry> result = new List<LogEntry>();
+            foreach (LogEntry entry in log) {
+                if(string.Compare(entry.CompumatId, compumatId, true) == 0) {
+                    result.Add(entry);
+                }
+            }
+            return result;
         }
 
         public void StopPolling() {
@@ -85,12 +106,20 @@ namespace API.Services {
             this._cts = new CancellationTokenSource();
         }
 
-        private List<Compumat> ParseCompumat(string compumatList) {
+        private List<Compumat> ParseCompumats(string compumatList) {
             XElement el = XmlHelper.ToXElement<string>(compumatList);
             XDocument xDoc = XDocument.Parse(compumatList);
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(Compumats));
             Compumats compumats = (Compumats)xmlSerializer.Deserialize(xDoc.CreateReader());
             return compumats.compumats;
+        }
+
+        private List<LogEntry> ParseLogEntries(string logString) {
+            XElement el = XmlHelper.ToXElement<string>(logString);
+            XDocument xDoc = XDocument.Parse(logString);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Log));
+            Log log = (Log)xmlSerializer.Deserialize(xDoc.CreateReader());
+            return log.log;
         }
 
     }

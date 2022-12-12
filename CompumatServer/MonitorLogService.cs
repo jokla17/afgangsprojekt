@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CompumatServer {
     public class MonitorLogService {
-        private static readonly string LOG_FILE_PATH = "../../../logs";
-        private static readonly string INPUT_FILE = "/MONITOR-LOG.txt";
-        private static readonly string OUTPUT_FILE = "/LiveLog.txt";
+        public static readonly string LOG_FILE_PATH = "../../../logs";
+        public static readonly string INPUT_FILE = "/MONITOR-LOG.txt";
+        public static readonly string OUTPUT_FILE = "/LiveLog.txt";
 
         //private FileStream _logReader = File.OpenRead(LOG_FILE_PATH);
         //private IEnumerable<string> _logReader = File.ReadLines(LOG_FILE_PATH);
@@ -68,7 +68,7 @@ namespace CompumatServer {
             wh.Close();
         }
 
-        private IEnumerable<string> GetFileLines(string filepath) {
+        public static IEnumerable<string> GetFileLines(string filepath) {
             var list = new List<string>();
             var fileStream = new FileStream(filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8)) {
@@ -97,7 +97,7 @@ namespace CompumatServer {
 
             // Clear the LiveLog and create a writer
             File.WriteAllText(LOG_FILE_PATH + OUTPUT_FILE, String.Empty);
-            //var fs = new FileStream(LOG_FILE_PATH + OUTPUT_FILE, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
+
             using var writer = new StreamWriter(LOG_FILE_PATH + OUTPUT_FILE, true);
             using var currentReader = new StreamReader(currentLineFs);
             using var nextReader = new StreamReader(nextLineFs);

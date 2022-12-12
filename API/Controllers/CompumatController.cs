@@ -96,6 +96,18 @@ namespace API.Controllers
             return Ok();
         }
 
+        [HttpGet("GetLog")]
+        public async Task<IActionResult> GetLog() {
+            List<LogEntry> log = await this._communicationService.GetLog();
+            return Ok(log);
+        }
+
+        [HttpGet("GetCompumatLog/{compumatId}")]
+        public async Task<IActionResult> GetCompumatLog([FromRoute] string compumatId) {
+            List<LogEntry> log = await this._communicationService.GetCompumatLog(compumatId);
+            return Ok(log);
+        }
+
         [HttpPost("TestRabbit2")]
         public async Task<IActionResult> TestRabbit(string[] tasks) {
             _rabbitService.SendTask(tasks);

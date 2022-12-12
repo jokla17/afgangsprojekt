@@ -43,6 +43,12 @@ namespace Server {
             "offline"
         };
 
+        private static void Start() {
+            Thread listener = new Thread(new ThreadStart(StartListening));
+
+            listener.Start();
+        }
+
         private static void GenerateCompumats(int amount) {
             compumats = new Compumat[amount];
             const string chars = "ABCDEFGIJKLMOPQRSTUVXYZ0123456789";
@@ -75,6 +81,7 @@ namespace Server {
         static void Main(string[] args) {
             MonitorLogService logService = new MonitorLogService();
             logService.Start();
+            Start();
             string input = null;
             while(input == null) {
                 input = Console.ReadLine();
@@ -109,6 +116,71 @@ namespace Server {
             }
         }
 
+        private static void StartListening() {
+            IPAddress ipAddr = IPAddress.Parse(SERVER_IP);
+            TcpListener listener = new TcpListener(ipAddr, PORT_NO);
+            Console.WriteLine("Listening...");
+            listener.Start();
+
+            while (true) {
+                TcpClient client = listener.AcceptTcpClient();
+
+                NetworkStream nwStream = client.GetStream();
+
+                byte[] bytesToSend = new byte[client.ReceiveBufferSize];
+
+                int bytesRead = nwStream.Read(bytesToSend, 0, bytesToSend.Length);
+
+                string dataReceived = Encoding.ASCII.GetString(bytesToSend, 0, bytesRead);
+                Console.WriteLine("Received : " + dataReceived);
+
+                if (dataReceived == "poll") {
+                    XElement result = new XElement("Compumats");
+                    foreach (Compumat compumat in compumats) {
+                        XElement el = XmlHelper.ToXElement<Compumat>(compumat);
+                        result.Add(el);
+                    }
+                    bytesToSend = ASCIIEncoding.ASCII.GetBytes(result.ToString());
+                    Console.WriteLine("Sending back : " + result);
+                    nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+                } else if (dataReceived == "GetLog") {
+                    XElement result = new XElement("Log");
+                    var fileLines = MonitorLogService.GetFileLines(MonitorLogService.LOG_FILE_PATH + MonitorLogService.OUTPUT_FILE);
+                    foreach (var l in fileLines) {
+                        LogEntry entry = LogEntry.ParseLogEntry(l);
+                        XElement el = XmlHelper.ToXElement<LogEntry>(entry);
+                        result.Add(el);
+                    }
+                    bytesToSend = ASCIIEncoding.ASCII.GetBytes(result.ToString());
+                    Debug.WriteLine("Bytes to send: " + bytesToSend.Length);
+                    Console.WriteLine("Sending back : " + result);
+                    nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+                } else if (dataReceived.Contains("GetCompumatLog")) { // "Request" should look like --> "GetCompumatLog:<CompumatId>"
+                    XElement result = new XElement("Log");
+                    string compumatId = dataReceived.Split(":")[1];
+                    var fileLines = MonitorLogService.GetFileLines(MonitorLogService.LOG_FILE_PATH + MonitorLogService.OUTPUT_FILE);
+                    foreach (var l in fileLines) {
+                        LogEntry entry = LogEntry.ParseLogEntry(l);
+                        if (string.Compare(compumatId, entry.CompumatId, true) == 0) {
+                            XElement el = XmlHelper.ToXElement<LogEntry>(entry);
+                            result.Add(el);
+                        }
+                    }
+                    bytesToSend = ASCIIEncoding.ASCII.GetBytes(result.ToString());
+                    Console.WriteLine("Sending back : " + result);
+                    nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+                } else {
+                    Console.WriteLine("Sending back : " + dataReceived);
+                    nwStream.Write(bytesToSend, 0, bytesRead);
+                }
+
+
+                client.Close();
+            }
+            listener.Stop();
+            Console.ReadLine();
+        }
+
     }
     public static class XmlHelper {
         public static XElement ToXElement<T>(this object obj) {
@@ -126,43 +198,7 @@ namespace Server {
 
     /* PUT THIS IN MAIN() TO GENERATE COMPUMATS
             GenerateCompumats(100);
-            IPAddress ipAddr = IPAddress.Parse(SERVER_IP);
-            TcpListener listener = new TcpListener(ipAddr, PORT_NO);
-            Console.WriteLine("Listening...");
-            listener.Start();
+            RandomizeDevices();
 
-            while (true) {
-                RandomizeDevices();
-
-                TcpClient client = listener.AcceptTcpClient();
-
-                NetworkStream nwStream = client.GetStream();
-
-                byte[] bytesToSend = new byte[client.ReceiveBufferSize];
-
-                int bytesRead = nwStream.Read(bytesToSend, 0, bytesToSend.Length);
-
-                string dataReceived = Encoding.ASCII.GetString(bytesToSend, 0, bytesRead);
-                Console.WriteLine("Received : " + dataReceived);
-
-                if(dataReceived == "poll") {
-                    XElement result = new XElement("Compumats");
-                    foreach (Compumat compumat in compumats) {
-                        XElement el = XmlHelper.ToXElement<Compumat>(compumat);
-                        result.Add(el);
-                    }
-                    bytesToSend = ASCIIEncoding.ASCII.GetBytes(result.ToString());
-                    Console.WriteLine("Sending back : " + result);
-                    nwStream.Write(bytesToSend, 0, bytesToSend.Length);
-                } else {
-                    Console.WriteLine("Sending back : " + dataReceived);
-                    nwStream.Write(bytesToSend, 0, bytesRead);
-                }
-
-
-                client.Close();
-            }
-            listener.Stop();
-            Console.ReadLine();
-            */
+    */
 }
