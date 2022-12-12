@@ -20,6 +20,14 @@ namespace CompumatServer {
             throw new NotImplementedException();
         }
 
+        public void GetLog() {
+            throw new NotImplementedException(); // TODO: get entire LiveLog.txt-file
+        }
+
+        public void GetCompumatLog(string compumatId) { // TODO: get all entries for specific device from the LiveLog.txt-file
+            throw new NotImplementedException();
+        }
+
         public void Send() {
             using (var connection = _factory.CreateConnection())
             using (var channel = connection.CreateModel()) {
