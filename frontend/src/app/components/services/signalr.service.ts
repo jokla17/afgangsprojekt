@@ -43,6 +43,22 @@ export class SignalrService {
       this.compumatService.localChange(data);
       this.updateData();
     });
+
+    this.hubConnection.on('NETWORK.Diagnostics', (data: string) => {
+      console.log(data);
+    });
+
+    this.hubConnection.on('GATE.CarIncoming', (data: string) => {
+      console.log(data);
+    });
+
+    this.hubConnection.on('GATE.CarOutgoing', (data: string) => {
+      console.log(data);
+    });
+
+    this.hubConnection.on('GATE.UnknownNumberplate', (data: string) => {
+      console.log(data);
+    });
   }
 
   private updateData!: () => void;

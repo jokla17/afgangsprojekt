@@ -16,11 +16,11 @@ namespace API.Services {
         CancellationTokenSource _cts;
         CompumatHub hub;
 
-        public CommunicationService() { 
+        public CommunicationService() {
             this._cts = new CancellationTokenSource();
         }
 
-        public string SendObject(Dictionary<string,string> message) {
+        public string SendObjectToCompumatServer(Dictionary<string,string> message) {
             tcpClient = new TcpClient(SERVER_IP, PORT_NO);
 
             NetworkStream nwStream = tcpClient.GetStream();
@@ -42,7 +42,7 @@ namespace API.Services {
             return receivedTxt;
         }
 
-        public string SendMessage(string message) {
+        public string SendMessageToCompumatServer(string message) {
             tcpClient = new TcpClient(SERVER_IP, PORT_NO);
 
             NetworkStream nwStream = tcpClient.GetStream();
@@ -62,11 +62,11 @@ namespace API.Services {
             return receivedTxt;
         }
 
-        public async void PollServer() {
+        public async void PollCompumatServer() {
             var token = this._cts.Token;
             await Task.Factory.StartNew(async () => {
                 while (true) {
-                    string recTxt = this.SendMessage("poll");
+                    string recTxt = this.SendMessageToCompumatServer("poll");
 
                     Debug.WriteLine(recTxt);
                     List<Compumat> compumats = ParseCompumats(recTxt);
@@ -80,7 +80,7 @@ namespace API.Services {
         }
 
         public async Task<List<LogEntry>> GetLog() {
-            string recTxt = this.SendMessage("GetLog");
+            string recTxt = this.SendMessageToCompumatServer("GetLog");
 
             Debug.WriteLine(recTxt);
             List<LogEntry> log = ParseLogEntries(recTxt);
@@ -88,7 +88,7 @@ namespace API.Services {
         }
 
         public async Task<List<LogEntry>> GetCompumatLog(string compumatId) {
-            string recTxt = this.SendMessage($"GetCompumatLog:{compumatId}");
+            string recTxt = this.SendMessageToCompumatServer($"GetCompumatLog:{compumatId}");
 
             Debug.WriteLine(recTxt);
             List<LogEntry> log = ParseLogEntries(recTxt);
@@ -101,7 +101,7 @@ namespace API.Services {
             return result;
         }
 
-        public void StopPolling() {
+        public void StopPollingCompumatServer() {
             this._cts.Cancel();
             this._cts = new CancellationTokenSource();
         }

@@ -57,6 +57,10 @@ namespace CompumatServer {
                     if (string.Compare(prevLastLine, lastLine) != 0) {
                         prevLastLine = lastLine;
                         Console.WriteLine(" [FileWatcher] New changes: \n" + lastLine + "\n");
+                        LogMessageType msgType = LogMessageTypes.EvaluateMessageType(lastLine);
+                        var enumMsgType = ((LogMessageType)msgType).ToString();
+                        var routingKey = enumMsgType.Replace("_", ".");
+                        RabbitService.Emit(routingKey, lastLine);
                     } else {
                         wh.WaitOne(10);
                     }

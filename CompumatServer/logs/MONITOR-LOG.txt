@@ -1,6 +1,12 @@
 ﻿01.11.22;00:14:31;S87;0;Diagnostic: 31.10.22 00:12:59-V:22-MD:34-67-SD:0-0-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:14:40;S97;1;Diagnostic: 31.10.22 00:12:58-V:41-MD:36-1012-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:14:50;S97;1;Diagnostic: 31.10.22 00:13:07-V:26-MD:35-1009-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET
+01.11.22;00:14:55;S90;0;Ukendt nummerplade EG38692
+01.11.22;00:15:00;S90;0;Bil med nummerplade EG38692 k�rer ind
+01.11.22;00:15:15;S90;0;Bil med nummerplade OHSN2003 k�rer ud
+01.11.22;00:15:20;S90;0;Ukendt nummerplade AB38391
+01.11.22;00:15:25;S90;0;Bil med nummerplade DG38648 k�rer ind
+01.11.22;00:15:35;S90;0;Bil med nummerplade OTSN2107 k�rer ud
 01.11.22;00:15:40;S97;1;Diagnostic: 31.10.22 00:13:58-V:41-MD:36-1011-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:15:41;S97;1;Clock sync: 1002
 01.11.22;00:15:41;S97;1;Diagnostic: 01.11.22 00:15:41-V:219-MD:27-1002-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET

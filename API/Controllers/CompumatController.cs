@@ -80,19 +80,19 @@ namespace API.Controllers
 
         [HttpPost("TestCompumatServer")]
         public async Task<IActionResult> TestCPS([FromBody] Dictionary<string,string> message) {
-            string resp = this._communicationService.SendObject(message);
+            string resp = this._communicationService.SendObjectToCompumatServer(message);
             return Ok(resp);
         }
 
         [HttpPost("TestCompumatServerPoll")]
         public async Task<IActionResult> TestCPSPoll() {
-            this._communicationService.PollServer();
+            this._communicationService.PollCompumatServer();
             return Ok();
         }
 
         [HttpGet("StopPolling")]
         public async Task<IActionResult> StopPolling() {
-            this._communicationService.StopPolling();
+            this._communicationService.StopPollingCompumatServer();
             return Ok();
         }
 

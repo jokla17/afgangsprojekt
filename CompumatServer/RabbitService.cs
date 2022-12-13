@@ -13,15 +13,7 @@ namespace CompumatServer {
         }
 
         private bool ShouldBroadcast(string message) { // TODO: figure out if it's a device we're interested in, and if it's a type of message we're interested in. Potentially which topic it should be broadcasted to?
-            throw new NotImplementedException();
-        }
-
-        public void GetLog() {
-            throw new NotImplementedException(); // TODO: get entire LiveLog.txt-file
-        }
-
-        public void GetCompumatLog(string compumatId) { // TODO: get all entries for specific device from the LiveLog.txt-file
-            throw new NotImplementedException();
+            return false;
         }
 
         public void Send() {
@@ -103,7 +95,7 @@ namespace CompumatServer {
             }
         }
 
-        public void Emit(string? routingKey, string message) {
+        public static void Emit(string? routingKey, string message) {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel()) {

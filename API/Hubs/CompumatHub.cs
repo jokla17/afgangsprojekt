@@ -27,5 +27,9 @@ namespace API.Hubs {
             Task t = _hub.Clients.All.SendAsync("TestSignalR", message);
             return t.IsCompleted;
         }
+
+        public async Task CompumatEvent(string routingKey, string message) {
+            await _hub.Clients.All.SendAsync(routingKey, message);
+        }
     }
 }

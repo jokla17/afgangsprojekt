@@ -2,14 +2,18 @@
 using RabbitMQ.Client.Events;
 using System.Text;
 using System.Globalization;
+using API.Hubs;
 
 namespace API.RabbitMQ {
     public class RabbitService {
         public ConnectionFactory _factory;
         public IConnection _connection;
         public IModel _channel;
+        public CompumatHub _hub;
 
-        public RabbitService() {
+
+        public RabbitService(CompumatHub hub) {
+            _hub = hub;
             _factory = new ConnectionFactory() { HostName = "localhost" };
         }
 
@@ -123,6 +127,12 @@ namespace API.RabbitMQ {
                 Console.ReadLine();
             }
         }
+
+        public async void OnMessageReceived(string routingKey, string message) {
+            await _hub.CompumatEvent(routingKey, message);
+            Console.WriteLine(" [x] Received '{0}':'{1}' ", routingKey, message);
+        }
+
 
         private string GetTimestamp() {
             DateTime now = DateTime.Now;
