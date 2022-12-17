@@ -1,0 +1,31 @@
+<div class="container mat-elevation-z8">
+  <mat-table [dataSource]="logs">
+    <ng-container matColumnDef="Index">
+      <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+      <mat-cell *matCellDef="let c; let i = index"> {{i+1}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Date">
+      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+      <mat-cell *matCellDef="let c"> {{c.timestamp.split('T')[0]}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Time">
+      <mat-header-cell *matHeaderCellDef> Time </mat-header-cell>
+      <mat-cell *matCellDef="let c"> {{c.timestamp.split('T')[1]}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="StationNo">
+      <mat-header-cell *matHeaderCellDef> Station No. </mat-header-cell>
+      <mat-cell *matCellDef="let c"> {{c.compumatId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Message">
+      <mat-header-cell *matHeaderCellDef> Message </mat-header-cell>
+      <mat-cell *matCellDef="let c"> {{c.message}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></mat-header-row>
+    <mat-row class="data-row" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
+  </mat-table>
+</div>

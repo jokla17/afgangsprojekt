@@ -4,6 +4,8 @@ import { async, BehaviorSubject, Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { Compumat } from './compumat';
 import { Subject } from 'rxjs';
+import { LogEvent } from '../eventlist/event/LogEvent';
+import { LogEntry } from '../map/map-dialog/logs/LogEntry';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +50,10 @@ constructor(
 
   deleteCompumat(id: string): Observable<Compumat> {
     return this.http.delete<Compumat>(`https://localhost:7049/${id}/Delete`);
+  }
+
+  getCompumatLogs(id: string): Observable<LogEntry[]> {
+    return this.http.get<LogEntry[]>(`https://localhost:7049/Compumat/GetCompumatLog/${id}`);
   }
 
   localAdd(compumat: Compumat) {

@@ -4,6 +4,11 @@
     <td mat-cell *matCellDef="let c"> {{c.data.id}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="StationNo">
+    <th mat-header-cell *matHeaderCellDef> Station No. </th>
+    <td mat-cell *matCellDef="let c"> {{c.data.stationNo}} </td>
+  </ng-container>
+
   <ng-container matColumnDef="Name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
     <td mat-cell *matCellDef="let c"> {{c.data.name}} </td>

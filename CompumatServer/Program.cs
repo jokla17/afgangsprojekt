@@ -56,6 +56,7 @@ namespace Server {
             for (int i = 0; i < amount; i++) {
                 compumats[i] = new Compumat {
                     Id = i,
+                    StationNo = $"S{i}",
                     Latitude = GetPseudoDoubleWithinRange(minY, maxY),
                     Longitude = GetPseudoDoubleWithinRange(minX, maxX),
                     Name = new string(Enumerable.Repeat(chars, 8)

@@ -54,7 +54,8 @@ namespace API.Repositories
         {
             SqlDataAdapter sql = new SqlDataAdapter();
             sqlConnection.Open();
-            SqlCommand sqlCommand = new SqlCommand("INSERT INTO db.dbo.Compumat (Name, Latitude, Longitude, Type, Status) OUTPUT INSERTED.* VALUES (@Name, @Longitude, @Latitude, @Type, @Status)", sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("INSERT INTO db.dbo.Compumat (StationNo, Name, Latitude, Longitude, Type, Status) OUTPUT INSERTED.* VALUES (@Name, @Longitude, @Latitude, @Type, @Status)", sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@StationNo", compumat.StationNo);
             sqlCommand.Parameters.AddWithValue("@Name", compumat.Name);
             sqlCommand.Parameters.AddWithValue("@Longitude", compumat.Longitude);
             sqlCommand.Parameters.AddWithValue("@Latitude", compumat.Latitude);
@@ -120,6 +121,7 @@ namespace API.Repositories
         {
             Compumat compumat = new Compumat();
             compumat.Id = sqlDataReader.GetInt32("Id");
+            compumat.StationNo = sqlDataReader["StationNo"].ToString()?.Trim();
             compumat.Name = sqlDataReader["Name"].ToString()?.Trim();
             compumat.Latitude = sqlDataReader.GetDouble("Latitude");
             compumat.Longitude = sqlDataReader.GetDouble("Longitude");

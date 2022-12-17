@@ -6,6 +6,9 @@ namespace API
         [XmlElement(ElementName="Id")]
         public int? Id { get; set; }
 
+        [XmlElement(ElementName ="StationNo")]
+        public string? StationNo { get; set; }
+
         [XmlElement(ElementName = "Name")]
         public string? Name { get; set; }
 

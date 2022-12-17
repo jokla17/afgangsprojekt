@@ -9,18 +9,23 @@
 </nav>
 <router-outlet></router-outlet> -->
 <div class="container">
+  <h2 mat-dialog-title>{{data.data.name}}</h2>
   <mat-dialog-content>
-    <mat-tab-group [selectedIndex]="selectedIndex" [dynamicHeight]="true">
-      <mat-tab label="Info">
+    <mat-tab-group [selectedIndex]="selectedIndex" [dynamicHeight]="true" (selectedIndexChange)="selectedIndexChange($event)">
+      <mat-tab class="tab" label="Info">
         <app-info [compumat]="data"></app-info>
       </mat-tab>
 
-      <mat-tab label="Commands">
+      <mat-tab class="tab" label="Commands">
         <app-command [compumat]="data" (isInputValid)="onFormChange($event)"></app-command>
       </mat-tab>
 
-      <mat-tab label="Configuration">
+      <mat-tab class="tab" label="Configuration">
         <app-configuration ></app-configuration>
+      </mat-tab>
+
+      <mat-tab class="tab" label="Logs">
+        <app-logs [compumat]="data.data"></app-logs>
       </mat-tab>
 
     </mat-tab-group>
@@ -33,6 +38,6 @@
   </div>
 
   <div class="actionsRight">
-    <button mat-raised-button color="accent" (click)="runCommand()" [disabled]="!isFormValid">Run</button>
+    <button *ngIf="selectedIndex === 1" mat-raised-button color="accent" (click)="runCommand()" [disabled]="!isFormValid">Run</button>
   </div>
 </mat-dialog-actions>

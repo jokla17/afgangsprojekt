@@ -1,0 +1,19 @@
+<div *ngIf="logEvent" [ngClass]="{
+    'box--warn' : logEvent.threatLevel == 'warn',
+    'box--error' : logEvent.threatLevel == 'error',
+    'box' : logEvent.threatLevel == 'ok'}"
+    (mouseenter)="onMouseEnter(logEvent.compumat.stationNo)" (mouseleave)="onMouseLeave(logEvent.compumat.stationNo)"
+>
+    <div class="box-icon">
+        <p class="icon_text">{{logEvent.compumat.stationNo}}</p>
+    </div>
+    <div class="box-content">
+        <div class="box-content_header">
+            <p class="header_text">{{logEvent.compumat.name}}</p>
+            <p class="header_timestamp" *ngIf="timestamp !== null">[{{logEvent.timestamp}}]</p>
+        </div>
+        <div class="box-content_body">
+            <p class="body_text">{{logEvent.message}}</p>
+        </div>
+    </div>
+</div>

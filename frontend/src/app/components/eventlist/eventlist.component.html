@@ -1,0 +1,23 @@
+<div class="box">
+    <div class="row header">
+        <h1 class="header-text">Event Viewer</h1>
+    </div>
+    <div class="row content">
+        <div class="content-box"> <!-- events go in here-->
+            <app-event
+            *ngFor="let event of events" [logEvent]="event" [hidden]="isHidden(event)">
+            </app-event>
+        </div>
+    </div>
+    <div class="row footer">
+        <mat-button-toggle-group class="toggle-button-group" [formControl]="logModeControl" aria-label="Log Mode" (change)="logModeChange($event.value)">
+          <mat-button-toggle class="toggle-button" value="Live" aria-label="Text align left" matTooltip="View the log in Live-mode">Live</mat-button-toggle>
+          <mat-button-toggle class="toggle-button" value="" aria-label="Text align right" matTooltip="'History'-mode is still undergoing development">History</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+</div>
+
+<!--
+  eventFilter.includes(compumatTypesEnum[event.compumat.type]) === false
+  {'event--hidden' : (eventFilter.includes(compumatTypesEnum[event.compumat.type]) === true)}
+-->

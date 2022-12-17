@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import * as signalR from "@microsoft/signalr";
 import { Compumat } from '../compumat/compumat';
 import { CompumatService } from '../compumat/compumat.service';
+import { EventService } from '../eventlist/event/event.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,7 @@ export class SignalrService {
 
   constructor(
     private compumatService: CompumatService,
+    private eventService: EventService,
   ) {}
 
   public startConnection() {
@@ -46,18 +48,22 @@ export class SignalrService {
 
     this.hubConnection.on('NETWORK.Diagnostics', (data: string) => {
       console.log(data);
+      this.eventService.parseAndAddEvent(data, 'ok');
     });
 
     this.hubConnection.on('GATE.CarIncoming', (data: string) => {
       console.log(data);
+      this.eventService.parseAndAddEvent(data, 'ok');
     });
 
     this.hubConnection.on('GATE.CarOutgoing', (data: string) => {
       console.log(data);
+      this.eventService.parseAndAddEvent(data, 'ok');
     });
 
     this.hubConnection.on('GATE.UnknownNumberplate', (data: string) => {
       console.log(data);
+      this.eventService.parseAndAddEvent(data, 'error');
     });
   }
 

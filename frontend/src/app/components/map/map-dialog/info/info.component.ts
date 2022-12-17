@@ -12,7 +12,7 @@ import { Compumat } from 'src/app/components/compumat/compumat';
 
 export class InfoComponent implements OnInit {
 
-  columnsToDisplay = ['Id', 'Name', 'Latitude', 'Longitude', 'Type', 'Status'];
+  columnsToDisplay = ['Id', 'StationNo', 'Name', 'Latitude', 'Longitude', 'Type', 'Status'];
   @Input() compumat: any;
   compumatArray: any[] = [];
 

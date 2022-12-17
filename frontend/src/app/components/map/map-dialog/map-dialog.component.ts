@@ -24,7 +24,7 @@ export class MapDialogComponent implements OnInit, OnDestroy {
   navLinks = [
     {link: 'info', name: 'Info'},
     {link: 'commands', name: 'Commands'},
-    {link: 'configuration', name: 'Configuration'}
+    {link: 'configuration', name: 'Configuration'},
   ];
 
   onNoClick(): void {

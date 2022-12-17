@@ -1,5 +1,22 @@
-<button (click)="openMoreDetails()"> Click for more details</button>
 <div class="map-container">
+  <div class="controls">
+    <mat-form-field matTooltip="Select any number of compumat-devices to show them only">
+      <mat-label>Filters</mat-label>
+      <mat-select [formControl]="selectedCompumatTypes" multiple (selectionChange)="filterChange($event.value)">
+        <mat-option *ngFor="let type of compumatTypeList" [value]="type">
+          {{type}}
+        </mat-option>
+        <button class="clear-filter-button" mat-stroked-button color="primary"
+          [disabled]="selectedCompumatTypes.value.length < 1" (click)="clearFilter()">
+          <mat-icon>clear</mat-icon> Clear filter
+        </button>
+      </mat-select>
+    </mat-form-field>
+    <button class="more-details-button" mat-raised-button color="primary" (click)="openMoreDetails()" [disabled]="currentCompumat === null" matTooltip="View more info, execute commands or change the configuration">
+      {{ currentCompumat === null ? 'No Compumat selected' : 'View Compumat'}}
+    </button>
+  </div>
+
   <div class="map-frame">
     <div id="map"></div>
   </div>

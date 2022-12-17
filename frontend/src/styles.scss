@@ -13,3 +13,42 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .leaflet-popup-tip{
   display: none;
 }
+
+.mat-tab-label:hover {
+  background-color: #d7cce9 !important;
+}
+
+.mat-tab-label-active {
+  background-color: #ac9ac8 !important;
+}
+
+.mat-tab-label-active:hover{
+  background-color: #ac9ac8 !important;
+}
+
+.mat-button-toggle:hover{
+  background-color: #d7cce9 !important;
+}
+
+.mat-button-toggle-checked{
+  background-color: #ac9ac8 !important;
+}
+
+.mat-button-toggle-checked:hover{
+  background-color: #ac9ac8 !important;
+}
+
+.mat-form-field{
+  background-color:#0000001f;
+  border-radius: 5px;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  margin-bottom: .5rem;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.mat-select-panel{
+  transform: translateY(25px) !important;
+}

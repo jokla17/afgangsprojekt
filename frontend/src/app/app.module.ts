@@ -20,6 +20,12 @@ import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { EventlistComponent } from './components/eventlist/eventlist.component';
+import { EventComponent } from './components/eventlist/event/event.component';
+import { MatIconModule } from '@angular/material/icon';
+import { LogsComponent } from './components/map/map-dialog/logs/logs.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -31,6 +37,9 @@ import { MatSelectModule } from '@angular/material/select';
     CommandComponent,
     InfoComponent,
     ConfigurationComponent,
+    EventlistComponent,
+    EventComponent,
+    LogsComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,8 +54,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatButtonModule,
     ReactiveFormsModule,
     MatSelectModule,
-    ],
+    MatIconModule,
+    MatButtonToggleModule,
+    MatTooltipModule
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

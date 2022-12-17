@@ -1,0 +1,77 @@
+.box{
+    margin-bottom: .25rem;
+    border-radius: 5px;
+    background-color:rgb(180, 231, 148);
+    display: flex;
+    flex-direction: row;
+    &--warn{
+        @extend .box;
+        background-color: rgb(231, 221, 148);
+    }
+    &--error{
+        @extend .box;
+        background-color: rgb(231, 148, 148);
+    }
+}
+.box-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: rgb(255, 255, 255);
+    min-width: 3.5rem;
+    max-width: 3.5rem;
+    margin: .25rem .25rem .25rem .25rem;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgb(101, 101, 101);
+    border-width: 3px;
+    max-height: 3.5rem;
+    min-height: 3.5rem;
+}
+.box-content{
+    display: flex;
+    flex-grow: 4;
+    margin: .25rem .25rem .25rem 0rem;
+    flex-direction: column;
+}
+.box-content_header{
+    display: flex;
+    border-radius: 5px;
+    margin-bottom: .25rem;
+    max-height: 1rem;
+    flex-grow: 1;
+    background-color: white;
+    justify-content: space-between;
+}
+.box-content_body{
+    display: flex;
+    flex-grow: 3;
+    background-color: white;
+}
+
+.icon_text{
+    font-weight: bold;
+    font-size: medium;
+    margin-top: .75rem;
+}
+
+.header_text{
+    font-weight: bold;
+    text-align: center;
+    margin-left: 4px;
+    line-height: 16px;
+}
+
+.header_timestamp{
+    font-style: italic;
+    font-size: smaller;
+    text-align: end;
+    line-height: 16px;
+    margin-right: 6px;
+}
+
+.body_text{
+    margin-left: 4px;
+}

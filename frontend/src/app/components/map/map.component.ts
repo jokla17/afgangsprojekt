@@ -11,6 +11,8 @@ import { MapDialogComponent } from './map-dialog/map-dialog.component';
 import { Router } from '@angular/router';
 import { SignalrService } from '../services/signalr.service';
 import { HttpClient } from '@angular/common/http';
+import { FormControl } from '@angular/forms';
+import { EventService } from '../eventlist/event/event.service';
 
 let iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
@@ -42,39 +44,53 @@ export class MapComponent implements OnInit, AfterViewInit {
     private signalRService: SignalrService,
     private http: HttpClient,
     private cd: ChangeDetectorRef,
+    private eventService: EventService
   ) {}
 
-
+  selectedCompumatTypes = new FormControl<string[]>([]);
+  compumatTypeList: string[] = Object.keys(CompumatType).filter((t) => {
+    return isNaN(Number(t));
+  });
   public map: L.Map;
-  mapData: MapData;
-  markerservice: MarkerService;
+  public mapData: MapData;
+  public markerservice: MarkerService;
 
   compumats: Compumat[] = [];
+  public currentCompumat: Compumat = null;
 
-  returnCurrentCompumat(): Compumat {
-    let currentId = this.markerService.getCurrentCompumat();
-    return currentId;
+  getCurrentCompumat(): Compumat {
+    console.log("getting")
+    return this.markerService.getCurrentCompumat();
+  }
+
+  hasSelectedCompumat(): boolean {
+    if (this.markerService.getCurrentCompumat() !== null) return true;
+    else return false;
   }
 
   ngOnInit(): void {
-    this.compumatService.compumatData.subscribe(compumats => {
+    this.compumatService.compumatData.subscribe((compumats) => {
       this.compumats = compumats;
+      this.cd.markForCheck();
+    });
+    this.mapService.selectedCompumat.subscribe(compumat => {
+      this.currentCompumat = compumat;
       this.cd.markForCheck();
     });
     this.signalRService.startConnection();
     this.signalRService.onDataUpdate(this.update.bind(this));
   }
 
-  update(){
+  update() {
     this.markerService.loadMarkers(this.map, this.compumats);
   }
 
   ngAfterViewInit(): void {
-      this.mapService.getMapData(1).subscribe((mapData) => {
-        this.mapData = mapData;
+    this.mapService.getMapData(1).subscribe((mapData) => {
+      this.mapData = mapData;
       this.initMap();
       this.markerService.loadMarkers(this.map, this.compumats);
-      });
+    });
   }
 
   initMap(): void {
@@ -97,19 +113,40 @@ export class MapComponent implements OnInit, AfterViewInit {
     this.map.setMaxBounds(bounds);
     tiles.addTo(this.map);
     this.map.setZoom(17);
+    this.map.on('click', () => {
+      this.markerService.resetCurrentCompumat();
+    });
   }
 
   openMoreDetails(): void {
     const dialogRef = this.dialog.open(MapDialogComponent, {
       width: '700px',
       height: '700px',
-      data: {data: this.returnCurrentCompumat()},
-      });
-    dialogRef.afterClosed().subscribe(result => {
+      data: { data: this.getCurrentCompumat() },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
       // TODO: fix, so that any changes are actually sent to the API
       this.compumats = result;
     });
-}
+  }
 
+  filterChange(filters: string[]) {
+    this.selectedCompumatTypes.setValue(filters);
+    this.eventService.filterChange(filters);
+    let filteredCompumats: Compumat[] = this.compumats;
+    if (filters.length > 0) {
+      filteredCompumats = this.compumats.filter((c) =>
+        filters.includes(CompumatType[c.type])
+      );
+    }
+    this.markerService.loadMarkers(this.map, filteredCompumats);
+    this.markerService.makeCustomCircleMarkers(this.map);
+  }
+
+  clearFilter() {
+    this.selectedCompumatTypes.setValue([]);
+    this.filterChange(this.selectedCompumatTypes.value);
+    this.eventService.filterChange(this.selectedCompumatTypes.value);
+  }
 }
