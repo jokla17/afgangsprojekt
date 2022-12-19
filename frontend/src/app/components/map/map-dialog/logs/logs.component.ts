@@ -20,9 +20,13 @@ export class LogsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("Compumat: " + this.compumat.stationNo);
-    this.compumatService.getCompumatLogs(this.compumat.stationNo).pipe(take(1)).subscribe(logs => {
-      this.logs = [...logs];
-      console.log(this.logs);
-    });
+    this.compumatService.getCompumatLogs(this.compumat.stationNo).pipe(take(1)).subscribe(
+      (logs) => {
+        this.logs = [...logs];
+        console.log(this.logs);
+      },
+      (error) => {
+        console.log('Error caught in logs-component. Message: \n' + error.toString());
+      });
   }
 }

@@ -27,6 +27,8 @@ builder.Services.AddSingleton<MapRepository>();
 builder.Services.AddSingleton<MapService>();
 builder.Services.AddSingleton<CommunicationService>();
 builder.Services.AddSingleton<RabbitService>();
+builder.Services.AddSingleton<CommandRepository>();
+builder.Services.AddSingleton<CommandService>();
 
 builder.Services.AddSignalR();
 builder.Services.AddCors(o => o.AddPolicy("myPolicy", builder => {

@@ -139,7 +139,7 @@ export class MarkerService {
           <p>StationNo: ${c.stationNo}</p>
           <p>Type: ${CompumatType[c.type]}</p>
           <p>Status: ${c.status}</p>
-          <button (click)="testButton()"> Click for more details</button>
+          <!--<button (click)="testButton()"> Click for more details</button>-->
         </div>
       `);
 

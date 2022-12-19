@@ -1,206 +1,87 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
-import { Command } from './command';
+import { Command, CommandValidator } from './command';
 import { CompumatType } from '../../../compumat/compumatType.enum';
+import { CommandService } from './command.service';
+import { take } from 'rxjs/operators';
+import { Compumat } from 'src/app/components/compumat/compumat';
 
 @Component({
   selector: 'app-command',
   templateUrl: './command.component.html',
-  styleUrls: ['./command.component.scss']
+  styleUrls: ['./command.component.scss'],
 })
 export class CommandComponent implements OnInit {
-
-  @Input() compumat: any;
+  @Input() compumat: Compumat;
   @Output() isInputValid = new EventEmitter<boolean>();
 
   requiredField = new FormControl('', [Validators.required]);
   optionalField = new FormControl('', []);
-  validators: Command[] = [];
+
+  validators: CommandValidator[] = [];
+
   public selectedCommandIndex: number = undefined;
   public selectedCompumatIndex: number = undefined;
 
+  commands: Command[] = [];
 
-  commands = [
-    {
-      compumat: 'VENDINGMACHINE',
-      cmds: [
-        {
-          cmdStr: "@PRINTRECEIPT",
-          cmdName: "Print Receipt",
-          args: [
-              {
-                  argName: "id",
-                  argType: "number",
-                  argPlaceholder: "Ex. 1",
-                  validArgs: null,
-                  minArg: null,
-                  maxArg: null,
-                  required: true
-              },{
-                  argName: "receiptNo",
-                  argType: "text",
-                  argPlaceholder: "Ex. 1562d",
-                  validArgs: null,
-                  minArg: null,
-                  maxArg: null,
-                  required: true
-              },{
-                  argName: "custId",
-                  argType: "text",
-                  argPlaceholder: "Ex. Thomas5412",
-                  validArgs: null,
-                  minArg: null,
-                  maxArg: null,
-                  required: false
-              },{
-                  argName: "receiptFormat",
-                  argType: "text",
-                  argPlaceholder: "Either A3 or A4",
-                  validArgs : [
-                      "A4",
-                      "A3"
-                  ],
-                  minArg: null,
-                  maxArg: null,
-                  required: true
-              },{
-                  argName: "fontSize",
-                  argType: "number",
-                  argPlaceholder: "Between 12 and 24",
-                  validArgs: null,
-                  minArg: 12,
-                  maxArg: 24,
-                  required: false
-              }
-          ]
-        },{
-          cmdStr:"@TURNOFF",
-          cmdName: "Turn Off",
-          args: [
-            {
-                argName: "id",
-                argType: "number",
-                argPlaceholder: "Ex. 1",
-                validArgs: null,
-                minArg: null,
-                maxArg: null,
-                required: true
-            },{
-                argName: "custId",
-                argType: "text",
-                argPlaceholder: "Ex. Thomas5412",
-                validArgs: null,
-                minArg: null,
-                maxArg: null,
-                required: false
-            }
-        ]
-        }
-      ]
-  },
-  {
-    compumat: 'GATE',
-    cmds: [
-      {
-        cmdStr: "@OPEN",
-        cmdName: "Open Gate",
-        args: [
-            {
-                argName: "id",
-                argType: "number",
-                argPlaceholder: "Ex. 1",
-                validArgs: null,
-                minArg: null,
-                maxArg: null,
-                required: true
-            }
-        ]
-      },{
-        cmdStr: "@CLOSE",
-        cmdName: "Close Gate",
-        args: [
-            {
-                argName: "id",
-                argType: "number",
-                argPlaceholder: "Ex. 1",
-                validArgs: null,
-                minArg: null,
-                maxArg: null,
-                required: true
-            }
-        ]
-      },{
-        cmdStr: "@RESTART",
-        cmdName: "Restart Gate",
-        args: [
-            {
-                argName: "id",
-                argType: "number",
-                argPlaceholder: "Ex. 1",
-                validArgs: null,
-                minArg: null,
-                maxArg: null,
-                required: true
-
-            },{
-              argName: "timeStamp",
-              argType: "text",
-              argPlaceholder: "Ex. 1",
-              validArgs: null,
-              minArg: null,
-              maxArg: null,
-              required: true
-          }
-        ]
-      }
-    ]
-  }
-
-]
-
-  constructor() { }
+  constructor(
+    private commandService: CommandService,
+  ) {}
 
   ngOnInit(): void {
-    this.selectCompumat();
-    this.commands.forEach(element => {
-      element.cmds.forEach(cmd => {
-        cmd.args.forEach(arg => {
+    this.commandService.commandData.subscribe(commands => {
+      commands.forEach(cmd => {
+        if (cmd.validCompumats.includes(this.compumat.type)){
+          this.commands.push(cmd);
+        }
+      });
+      console.log(this.commands);
+
+      this.selectCompumat();
+      this.commands.forEach((element) => {
+        element.arguments.forEach((arg) => {
           if (arg.required) {
-            this.validators.push({name: cmd.cmdName, validators: [new FormControl(null, [Validators.required])]});
+            this.validators.push({
+              commandName: element.commandName,
+              validators: [new FormControl(null, [Validators.required])],
+            });
           } else {
-            this.validators.push({name: cmd.cmdName, validators: [new FormControl(null)]});
+            this.validators.push({
+              commandName: element.commandName,
+              validators: [new FormControl(null)],
+            });
           }
         });
-      }
-    )});
+      });
+    });
   }
 
-  selectCommand(commandName: string){
+  selectCommand(commandName: string) {
     this.isInputValid.emit(false);
-    this.commands[this.selectedCompumatIndex].cmds.findIndex((cmd, index) => {
-      if (cmd.cmdName === commandName){
+    this.commands.findIndex((cmd, index) => {
+      if (cmd.commandName === commandName) {
         this.selectedCommandIndex = index;
       }
-    }
-  )}
+    });
+  }
 
-  selectCompumat(){
-    this.commands.findIndex((compumat, index) => {
-      if (CompumatType[compumat.compumat] === this.compumat.data.type){
+  selectCompumat() {
+    this.commands.findIndex((cmd, index) => {
+      if (cmd.validCompumats.includes(this.compumat.type)) {
         this.selectedCompumatIndex = index;
       }
-    }
-  )}
+    });
+  }
 
-
-  checkValidInput(index: number, value: any){
+  checkValidInput(index: number, value: any) {
     console.log(this.validators[index].validators[0]);
     console.log(value);
     this.validators[index].validators[0].setValue(value);
-    let argArr = this.commands[this.selectedCompumatIndex].cmds[this.selectedCommandIndex].args;
+    let argArr = this.commands[this.selectedCommandIndex].arguments;
     let valid = true;
-    argArr.forEach((element, i)  => {
-      if (element.required && this.validators[i].validators[0].invalid){
+    argArr.forEach((element, i) => {
+      if (element.required && this.validators[i].validators[0].invalid) {
         valid = false;
       }
     });

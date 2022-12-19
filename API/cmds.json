@@ -1,0 +1,139 @@
+[
+  {
+    "commandName": "Print Receipt",
+    "commandString": "@PRINTRECEIPT",
+    "validCompumats": [ "VENDINGMACHINE" ],
+    "arguments": [
+      {
+        "argName": "id",
+        "argType": "number",
+        "argPlaceholder": "Ex. 1",
+        "validArgs": null,
+        "minArg": null,
+        "maxArg": null,
+        "required": true
+      },
+      {
+        "argName": "receiptNo",
+        "argType": "text",
+        "argPlaceholder": "Ex. 1562d",
+        "validArgs": null,
+        "minArg": null,
+        "maxArg": null,
+        "required": true
+      },
+      {
+        "argName": "custId",
+        "argType": "text",
+        "argPlaceholder": "Ex. Thomas5412",
+        "validArgs": null,
+        "minArg": null,
+        "maxArg": null,
+        "required": false
+      },
+      {
+        "argName": "receiptFormat",
+        "argType": "text",
+        "argPlaceholder": "Either A3 or A4",
+        "validArgs": [
+          "A4",
+          "A3"
+        ],
+        "minArg": null,
+        "maxArg": null,
+        "required": true
+      },
+      {
+        "argName": "fontSize",
+        "argType": "number",
+        "argPlaceholder": "Between 12 and 24",
+        "validArgs": null,
+        "minArg": 12,
+        "maxArg": 24,
+        "required": false
+      }
+    ]
+  },
+  {
+    "commandName": "Turn Off",
+    "commandString": "@TURNOFF",
+    "validCompumats": [ "VENDINGMACHINE", "GATE" ],
+    "arguments": [
+      {
+        "argName": "id",
+        "argType": "number",
+        "argPlaceholder": "Ex. 1",
+        "validArgs": null,
+        "minArg": null,
+        "maxArg": null,
+        "required": true
+      },
+      {
+        "argName": "custId",
+        "argType": "text",
+        "argPlaceholder": "Ex. Thomas5412",
+        "validArgs": null,
+        "minArg": null,
+        "maxArg": null,
+        "required": false
+      }
+    ]
+  },
+  {
+    "commandName": "Open Gate",
+    "commandString": "@OPEN",
+    "validCompumats": [ "GATE" ],
+    "arguments": [
+      {
+        "argName": "id",
+        "argType": "number",
+        "argPlaceholder": "Ex. 1",
+        "validArgs": null,
+        "minArg": null,
+        "maxArg": null,
+        "required": true
+      }
+    ]
+  },
+  {
+    "commandName": "Close Gate",
+    "commandString": "@CLOSE",
+    "validCompumats": [ "GATE" ],
+    "arguments": [
+      {
+        "argName": "id",
+        "argType": "number",
+        "argPlaceholder": "Ex. 1",
+        "validArgs": null,
+        "minArg": null,
+        "maxArg": null,
+        "required": true
+      }
+    ]
+  },
+  {
+    "commandName": "Restart Gate",
+    "commandString": "@RESTART",
+    "validCompumats": [ "GATE" ],
+    "arguments": [
+      {
+        "argName": "id",
+        "argType": "number",
+        "argPlaceholder": "Ex. 1",
+        "validArgs": null,
+        "minArg": null,
+        "maxArg": null,
+        "required": true
+      },
+      {
+        "argName": "timeStamp",
+        "argType": "text",
+        "argPlaceholder": "Ex. 1",
+        "validArgs": null,
+        "minArg": null,
+        "maxArg": null,
+        "required": true
+      }
+    ]
+  }
+]

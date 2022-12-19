@@ -1,23 +1,24 @@
 <div class="container">
   <div class="content">
     <div class="buttonSection" *ngIf="selectedCompumatIndex!==undefined">
-      <button class="cmdButton" *ngFor="let cmd of commands[selectedCompumatIndex].cmds" mat-raised-button color="primary" (click)="selectCommand(cmd.cmdName)">{{cmd.cmdName}}</button>
+      <button class="cmdButton" *ngFor="let cmd of commands" mat-raised-button color="primary" (click)="selectCommand(cmd.commandName)">{{cmd.commandName}}</button>
     </div>
 
     <div class="formSection" *ngIf="selectedCommandIndex!==undefined">
       <form class="form">
-        <mat-form-field class="formField" *ngFor="let args of commands[selectedCompumatIndex].cmds[selectedCommandIndex].args;let i = index" class="example-full-width" appearance="fill">
-          <mat-label>{{args.argName}}</mat-label>
-          <div *ngIf="args.validArgs==null">
-            <input matInput ngControl="input" #input [placeholder]="args.argPlaceholder" [type]="args.argType" [min]="args.minArg" [max]="args.maxArg" [required]="args.required" (change)="checkValidInput(i, input.value)">
+        <mat-form-field class="formField" *ngFor="let arg of commands[selectedCommandIndex].arguments;let i = index" class="example-full-width" appearance="fill">
+          <mat-label>{{arg.argName}}</mat-label>
+          <div *ngIf="arg.validArgs==null">
+            <input matInput ngControl="input" #input placeholder="{{arg.argPlaceholder}}" [type]="arg.argType" [min]="arg.minArg" [max]="arg.maxArg" [required]="arg.required" (change)="checkValidInput(i, input.value)">
             <!-- [formControl]="validators['Print Receipt'].validators[i]" -->
           </div>
           <div>
-            <mat-select ngControl="select" #select *ngIf="args.validArgs!=null" [placeholder]="args.argPlaceholder" [required]="args.required" (selectionChange)="checkValidInput(i, select.value)">
-              <mat-option *ngFor="let validArg of args.validArgs" [value]="validArg">{{validArg}}</mat-option>
+            <mat-select ngControl="select" #select *ngIf="arg.validArgs!=null" [placeholder]="arg.argPlaceholder" [required]="arg.required" (selectionChange)="checkValidInput(i, select.value)">
+              <mat-option *ngFor="let validArg of arg.validArgs" [value]="validArg">{{validArg}}</mat-option>
             </mat-select>
           </div>
         </mat-form-field>
+        <p style="color: red"> {{ '* = Required' }}</p>
       </form>
     </div>
   </div>
