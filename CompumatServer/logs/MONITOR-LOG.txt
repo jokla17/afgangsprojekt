@@ -1,12 +1,12 @@
 ﻿01.11.22;00:14:31;S87;0;Diagnostic: 31.10.22 00:12:59-V:22-MD:34-67-SD:0-0-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:14:40;S97;1;Diagnostic: 31.10.22 00:12:58-V:41-MD:36-1012-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:14:50;S97;1;Diagnostic: 31.10.22 00:13:07-V:26-MD:35-1009-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET
-01.11.22;00:14:55;S90;0;Ukendt nummerplade EG38692
-01.11.22;00:15:00;S90;0;Bil med nummerplade EG38692 k�rer ind
-01.11.22;00:15:15;S90;0;Bil med nummerplade OHSN2003 k�rer ud
-01.11.22;00:15:20;S90;0;Ukendt nummerplade AB38391
-01.11.22;00:15:25;S90;0;Bil med nummerplade DG38648 k�rer ind
-01.11.22;00:15:35;S90;0;Bil med nummerplade OTSN2107 k�rer ud
+01.11.22;00:14:55;S90;0;Ukendt nummerplade AA00000
+01.11.22;00:15:00;S90;0;Bil med nummerplade AA00000 kører ind
+01.11.22;00:15:15;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;00:15:20;S90;0;Ukendt nummerplade AA00000
+01.11.22;00:15:25;S90;0;Bil med nummerplade AA00000 kører ind
+01.11.22;00:15:35;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;00:15:40;S97;1;Diagnostic: 31.10.22 00:13:58-V:41-MD:36-1011-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:15:41;S97;1;Clock sync: 1002
 01.11.22;00:15:41;S97;1;Diagnostic: 01.11.22 00:15:41-V:219-MD:27-1002-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET
@@ -107,7 +107,7 @@
 01.11.22;07:46:32;S95;4;02-Gateway Alive-01.11.22 - 07:46:32
 01.11.22;07:57:31;S95;4;02-GW-|26751| Unit disconnected
 01.11.22;07:57:32;S95;4;No response on channel:1 - Index:2
-01.11.22;07:57:33;S95;4;-FEJLTRANS ved returmelding-Funk:1-Data:; // FROM HERE, IT IS MARMARS
+01.11.22;07:57:33;S95;4;-FEJLTRANS ved returmelding-Funk:1-Data:
 01.11.22;00:06:45;S92;5;Retry(2) til lun: 5008-Funk:0-Data:
 01.11.22;00:11:10;S92;5;Diagnostic: 31.10.22 00:10:00-V:41-MD:36-5010-SD:0-5000-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:12:10;S92;5;Clock sync: 5008
@@ -130,11 +130,11 @@
 01.11.22;00:24:47;S92;5;Diagnostic: 01.11.22 00:24:45-V:41-MD:36-5014-SD:0-5000-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:25:47;S92;5;Diagnostic: 01.11.22 00:25:45-V:41-MD:36-5013-SD:0-5000-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:29:45;S89;7;Diagnostic: 01.11.22 00:29:44-V:41-MD:36-7010-SD:0-7000-Code:259-0-Sev:I-:CLOCK_SET
-01.11.22;00:34:35;S90;0;Ukendt nummerplade JR33887
-01.11.22;00:34:35;S96;1;Kamera har opfanget regnr.:JR33887-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;00:34:35;S90;0;Ukendt nummerplade AA00000
+01.11.22;00:34:35;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
 01.11.22;00:36:09;S96;1;Clock sync: 1008
 01.11.22;00:36:09;S96;1;Diagnostic: 01.11.22 00:36:09-V:209-MD:29-1008-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET
-01.11.22;00:36:10;S96;1;Optagelsen har timeout (JR33887)-Lane:1
+01.11.22;00:36:10;S96;1;Optagelsen har timeout (AA00000)-Lane:1
 01.11.22;00:37:46;S96;1;Diagnostic: 01.11.22 00:37:45-V:41-MD:36-1012-SD:0-1000-Code:259-0-Sev:I-:CLOCK_SET
 01.11.22;00:43:00;S88;8;01-Gateway Alive-01.11.22 - 00:43:00
 01.11.22;00:43:05;S94;3;01-Gateway Alive-01.11.22 - 00:43:05
@@ -148,16 +148,16 @@
 01.11.22;01:15:11;S93;4;Lun:4050 - output no.:3 - Status:4
 01.11.22;01:16:20;S97;0;02-Gateway Alive-01.11.22 - 01:16:20
 01.11.22;01:16:20;S95;2;02-Gateway Alive-01.11.22 - 01:16:20
-01.11.22;01:27:00;S97;0;02-GW-|26105| Unit logged in (ICCID is 8988280666001065583{7} and OPERATOR is 3 DK)
+01.11.22;01:27:00;S97;0;02-GW-|26105| Unit logged in (ICCID is 0000000000000000000{7} and OPERATOR is a-phone-operator-name
 01.11.22;01:43:00;S88;8;01-Gateway Alive-01.11.22 - 01:43:00
 01.11.22;01:43:05;S94;3;01-Gateway Alive-01.11.22 - 01:43:05
 01.11.22;01:43:20;S93;4;01-Gateway Alive-01.11.22 - 01:43:20
 01.11.22;01:46:20;S97;0;02-Gateway Alive-01.11.22 - 01:46:20
 01.11.22;01:46:20;S95;2;02-Gateway Alive-01.11.22 - 01:46:20
 01.11.22;02:01:32;S97;0;02-GW-|26074| Unit disconnected
-01.11.22;02:10:02;S97;0;02-GW-|26074| Unit logged in (ICCID is 8988280666000450941{2} and OPERATOR is Telenor DK)
+01.11.22;02:10:02;S97;0;02-GW-|26074| Unit logged in (ICCID is 0000000000000000000{2} and OPERATOR is a-phone-operator-name
 01.11.22;02:10:46;S95;2;02-GW-|26718| Unit disconnected
-01.11.22;02:10:46;S95;2;02-GW-|26718| Unit logged in (ICCID is 8988228066602041946{5} and OPERATOR is Telia-Telenor DK)
+01.11.22;02:10:46;S95;2;02-GW-|26718| Unit logged in (ICCID is 0000000000000000000{5} and OPERATOR is a-phone-operator-name
 01.11.22;02:13:00;S88;8;01-Gateway Alive-01.11.22 - 02:13:00
 01.11.22;02:13:05;S94;3;01-Gateway Alive-01.11.22 - 02:13:05
 01.11.22;02:13:20;S93;4;01-Gateway Alive-01.11.22 - 02:13:20
@@ -165,7 +165,7 @@
 01.11.22;02:16:20;S97;0;02-Gateway Alive-01.11.22 - 02:16:20
 01.11.22;02:16:21;S95;2;02-Gateway Alive-01.11.22 - 02:16:21
 01.11.22;02:16:26;S95;2;02-GW-|26729| Unit disconnected
-01.11.22;02:21:45;S95;2;02-GW-|26729| Unit logged in (ICCID is 8988228066602041978{8} and OPERATOR is Telenor DK 1nce.net)
+01.11.22;02:21:45;S95;2;02-GW-|26729| Unit logged in (ICCID is 0000000000000000000{8} and OPERATOR is a-phone-operator-name
 01.11.22;02:35:53;S96;1;Retry(2) til lun: 1008-Funk:0-Data:
 01.11.22;02:43:00;S88;8;01-Gateway Alive-01.11.22 - 02:43:00
 01.11.22;02:43:05;S94;3;01-Gateway Alive-01.11.22 - 02:43:05
@@ -224,7 +224,7 @@
 01.11.22;06:15:34;S94;3;Lun:3038 - output no.:4 - Status:5
 01.11.22;06:16:21;S97;0;02-Gateway Alive-01.11.22 - 06:16:21
 01.11.22;06:16:21;S95;2;02-Gateway Alive-01.11.22 - 06:16:21
-01.11.22;06:27:53;S90;0;Bil med nummerplade AC84772 k�rer ud
+01.11.22;06:27:53;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;06:43:00;S88;8;01-Gateway Alive-01.11.22 - 06:43:00
 01.11.22;06:43:05;S94;3;01-Gateway Alive-01.11.22 - 06:43:05
 01.11.22;06:43:21;S93;4;01-Gateway Alive-01.11.22 - 06:43:21
@@ -252,11 +252,11 @@
 01.11.22;08:15:48;S88;8;Lun:8006 - output no.:2 - Status:4
 01.11.22;08:16:21;S97;0;02-Gateway Alive-01.11.22 - 08:16:21
 01.11.22;08:16:21;S95;2;02-Gateway Alive-01.11.22 - 08:16:21
-01.11.22;08:33:06;S90;0;Ukendt nummerplade CU43906
-01.11.22;08:33:07;S96;1;Kamera har opfanget regnr.:CU43906-Lane:TCPs-Adr:1012-Funk:0
-01.11.22;08:42:54;S90;0;Bil med nummerplade CD074RX k�rer ud
-01.11.22;08:42:55;S96;1;Kamera har opfanget regnr.:CD074RX-Lane:TCPs-Adr:1012-Funk:-1
-01.11.22;08:42:55;S96;1;Numberplate received from SEELANE: CD074RX-Index:2-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:16232-Cust:8139-Key:                              CD074RX   -Corrected:True-AutoMat.Host:1008
+01.11.22;08:33:06;S90;0;Ukendt nummerplade AA00000
+01.11.22;08:33:07;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;08:42:54;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;08:42:55;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:-1
+01.11.22;08:42:55;S96;1;Numberplate received from SEELANE: AA00000-Index:2-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:12345-Cust:12345-Key:                              AA00000   -Corrected:True-AutoMat.Host:1008
 01.11.22;08:43:00;S88;8;01-Gateway Alive-01.11.22 - 08:43:00
 01.11.22;08:43:05;S94;3;01-Gateway Alive-01.11.22 - 08:43:05
 01.11.22;08:43:21;S93;4;01-Gateway Alive-01.11.22 - 08:43:21
@@ -275,41 +275,41 @@
 01.11.22;09:16:04;S92;5;Diagnostic: 01.11.22 09:15:47-V:41-MD:36-5011-SD:0-5000-Code:256-0-Sev:I-:ALIVE
 01.11.22;09:16:21;S97;0;02-Gateway Alive-01.11.22 - 09:16:21
 01.11.22;09:16:21;S95;2;02-Gateway Alive-01.11.22 - 09:16:21
-01.11.22;09:17:57;S90;0;Ukendt nummerplade EG38692
-01.11.22;09:17:57;S96;1;Kamera har opfanget regnr.:EG38692-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;09:17:57;S90;0;Ukendt nummerplade AA00000
+01.11.22;09:17:57;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
 01.11.22;09:19:03;S92;5;Diagnostic: 01.11.22 09:18:46-V:41-MD:36-5012-SD:0-5000-Code:256-0-Sev:I-:ALIVE
-01.11.22;09:20:06;S90;0;Bil med nummerplade EG38692 k�rer ud
+01.11.22;09:20:06;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;09:25:04;S92;5;Diagnostic: 01.11.22 09:24:46-V:41-MD:36-5014-SD:0-5000-Code:256-0-Sev:I-:ALIVE
 01.11.22;09:26:04;S92;5;Diagnostic: 01.11.22 09:25:46-V:41-MD:36-5013-SD:0-5000-Code:256-0-Sev:I-:ALIVE
 01.11.22;09:30:03;S89;7;Diagnostic: 01.11.22 09:29:45-V:41-MD:36-7010-SD:0-7000-Code:256-0-Sev:I-:ALIVE
-01.11.22;09:31:25;S90;0;Bil med nummerplade OHSN2003 k�rer ud
-01.11.22;09:31:25;S96;1;Kamera har opfanget regnr.:OHSN2003-Lane:TCPs-Adr:1012-Funk:-1
-01.11.22;09:31:25;S96;1;Numberplate received from SEELANE: OHSN2003-Index:2-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:16256-Cust:8148-Key:                             OHSN2003   -Corrected:True-AutoMat.Host:1008
-01.11.22;09:34:25;S90;0;Ukendt nummerplade AN50792
-01.11.22;09:34:25;S96;1;Kamera har opfanget regnr.:AN50792-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;09:31:25;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;09:31:25;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:-1
+01.11.22;09:31:25;S96;1;Numberplate received from SEELANE: AA00000-Index:2-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:12345-Cust:12345-Key:                              AA00000   -Corrected:True-AutoMat.Host:1008
+01.11.22;09:34:25;S90;0;Ukendt nummerplade AA00000
+01.11.22;09:34:25;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
 01.11.22;09:35:54;S88;8;Lun:8008 - output no.:3 - Status:4
 01.11.22;09:38:03;S96;1;Diagnostic: 01.11.22 09:37:46-V:41-MD:36-1012-SD:0-1000-Code:256-0-Sev:I-:ALIVE
-01.11.22;09:39:21;S90;0;Bil med nummerplade CU43906 k�rer ud
+01.11.22;09:39:21;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;09:43:00;S88;8;01-Gateway Alive-01.11.22 - 09:43:00
 01.11.22;09:43:06;S94;3;01-Gateway Alive-01.11.22 - 09:43:06
 01.11.22;09:43:21;S93;4;01-Gateway Alive-01.11.22 - 09:43:21
 01.11.22;09:46:21;S97;0;02-Gateway Alive-01.11.22 - 09:46:21
 01.11.22;09:46:21;S95;2;02-Gateway Alive-01.11.22 - 09:46:21
-01.11.22;09:54:15;S90;0;Ukendt nummerplade DJ53749
-01.11.22;09:54:15;S96;1;Kamera har opfanget regnr.:DJ53749-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;09:54:15;S90;0;Ukendt nummerplade AA00000
+01.11.22;09:54:15;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
 01.11.22;09:56:43;S97;0;Lun:100 - output no.:1 - Status:4
 01.11.22;09:56:43;S97;0;MATIOSETOUTPUT-EV-100-1-4
 01.11.22;09:56:43;S97;0;Plug On - Enhed:EV     1
 01.11.22;09:56:56;S97;0;Lun:101 - output no.:1 - Status:5
 01.11.22;10:01:52;S97;0;02-GW-|26076| Unit disconnected
-01.11.22;10:01:52;S97;0;02-GW-|26076| Unit logged in (ICCID is 8988280666000450943{8} and OPERATOR is 3 DK)
+01.11.22;10:01:52;S97;0;02-GW-|26076| Unit logged in (ICCID is 0000000000000000000{8} and OPERATOR is a-phone-operator-name
 01.11.22;10:01:52;S97;0;Booted: 50
-01.11.22;10:03:15;S90;0;Bil med nummerplade ROSKA62 k�rer ud
-01.11.22;10:03:24;S96;1;Optagelsen har timeout (DJ53749)-Lane:1
-01.11.22;10:08:42;S90;0;Bil med nummerplade EMDJJ98 k�rer ud
-01.11.22;10:08:43;S96;1;Kamera har opfanget regnr.:EMDJJ98-Lane:TCPs-Adr:1012-Funk:-1
-01.11.22;10:08:43;S96;1;Numberplate received from SEELANE: EMDJJ98-Index:1-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:16260-Cust:8149-Key:                              EMDJJ98   -Corrected:True-AutoMat.Host:1008
-01.11.22;10:12:57;S90;0;Bil med nummerplade AN50792 k�rer ud
+01.11.22;10:03:15;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;10:03:24;S96;1;Optagelsen har timeout (AA00000)-Lane:1
+01.11.22;10:08:42;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;10:08:43;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:-1
+01.11.22;10:08:43;S96;1;Numberplate received from SEELANE: AA00000-Index:1-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:12345-Cust:12345-Key:                              AA00000   -Corrected:True-AutoMat.Host:1008
+01.11.22;10:12:57;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;10:13:00;S88;8;01-Gateway Alive-01.11.22 - 10:13:00
 01.11.22;10:13:06;S94;3;01-Gateway Alive-01.11.22 - 10:13:06
 01.11.22;10:13:21;S93;4;01-Gateway Alive-01.11.22 - 10:13:21
@@ -320,21 +320,21 @@
 01.11.22;10:16:21;S97;0;02-Gateway Alive-01.11.22 - 10:16:21
 01.11.22;10:16:21;S95;2;02-Gateway Alive-01.11.22 - 10:16:21
 01.11.22;10:29:26;S97;0;02-GW-|26076| Unit disconnected
-01.11.22;10:29:26;S97;0;02-GW-|26076| Unit logged in (ICCID is 8988280666000450943{8} and OPERATOR is 3 DK)
+01.11.22;10:29:26;S97;0;02-GW-|26076| Unit logged in (ICCID is 0000000000000000000{8} and OPERATOR is a-phone-operator-name
 01.11.22;10:29:26;S97;0;Booted: 50
-01.11.22;10:42:19;S90;0;Bil med nummerplade P844FJ k�rer ud
-01.11.22;10:42:19;S96;1;Kamera har opfanget regnr.:P844FJ-Lane:TCPs-Adr:1012-Funk:-1
-01.11.22;10:42:19;S96;1;Numberplate received from SEELANE: P844FJ-Index:1-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:16263-Cust:8151-Key:                               P844FJ   -Corrected:True-AutoMat.Host:1008
+01.11.22;10:42:19;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;10:42:19;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:-1
+01.11.22;10:42:19;S96;1;Numberplate received from SEELANE: AA00000-Index:1-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:12345-Cust:12345-Key:                              AA00000   -Corrected:True-AutoMat.Host:1008
 01.11.22;10:43:00;S88;8;01-Gateway Alive-01.11.22 - 10:43:00
 01.11.22;10:43:06;S94;3;01-Gateway Alive-01.11.22 - 10:43:06
 01.11.22;10:43:21;S93;4;01-Gateway Alive-01.11.22 - 10:43:21
 01.11.22;10:46:21;S97;0;02-Gateway Alive-01.11.22 - 10:46:21
 01.11.22;10:46:21;S95;2;02-Gateway Alive-01.11.22 - 10:46:21
-01.11.22;10:50:11;S90;0;Ukendt nummerplade YK52926
-01.11.22;10:50:11;S96;1;Kamera har opfanget regnr.:YK52926-Lane:TCPs-Adr:1012-Funk:0
-01.11.22;11:02:03;S90;0;Bil med nummerplade YK52926 k�rer ud
-01.11.22;11:08:27;S90;0;Ukendt nummerplade CM27592
-01.11.22;11:08:27;S96;1;Kamera har opfanget regnr.:CM27592-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;10:50:11;S90;0;Ukendt nummerplade AA00000
+01.11.22;10:50:11;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;11:02:03;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;11:08:27;S90;0;Ukendt nummerplade AA00000
+01.11.22;11:08:27;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
 01.11.22;11:11:59;S93;4;Lun:4029 - output no.:5 - Status:5
 01.11.22;11:13:00;S88;8;01-Gateway Alive-01.11.22 - 11:13:00
 01.11.22;11:13:06;S94;3;01-Gateway Alive-01.11.22 - 11:13:06
@@ -345,16 +345,16 @@
 01.11.22;11:15:29;S88;8;Lun:8006 - output no.:2 - Status:4
 01.11.22;11:16:21;S97;0;02-Gateway Alive-01.11.22 - 11:16:21
 01.11.22;11:16:21;S95;2;02-Gateway Alive-01.11.22 - 11:16:21
-01.11.22;11:16:35;S90;0;Bil med nummerplade CM27592 k�rer ud
-01.11.22;11:27:15;S90;0;Ukendt nummerplade LW56JWW
-01.11.22;11:27:15;S96;1;Kamera har opfanget regnr.:LW56JWW-Lane:TCPs-Adr:1012-Funk:0
-01.11.22;11:28:45;S96;1;Optagelsen har timeout (LW56JWW)-Lane:1
+01.11.22;11:16:35;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;11:27:15;S90;0;Ukendt nummerplade AA00000
+01.11.22;11:27:15;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;11:28:45;S96;1;Optagelsen har timeout (AA00000)-Lane:1
 01.11.22;11:29:18;S97;0;Lun:35 - output no.:5 - Status:5
 01.11.22;11:29:29;S97;0;Lun:35 - output no.:3 - Status:5
 01.11.22;11:31:35;S97;0;Lun:35 - output no.:2 - Status:5
-01.11.22;11:35:07;S90;0;Bil med nummerplade JR33887 k�rer ud
-01.11.22;11:35:08;S96;1;Kamera har opfanget regnr.:JR33887-Lane:TCPs-Adr:1012-Funk:-1
-01.11.22;11:35:08;S96;1;Numberplate received from SEELANE: JR33887-Index:1-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:16266-Cust:8153-Key:                              JR33887   -Corrected:True-AutoMat.Host:1008
+01.11.22;11:35:07;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;11:35:08;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:-1
+01.11.22;11:35:08;S96;1;Numberplate received from SEELANE: AA00000-Index:1-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:12345-Cust:12345-Key:                              AA00000   -Corrected:True-AutoMat.Host:1008
 01.11.22;11:43:01;S88;8;01-Gateway Alive-01.11.22 - 11:43:01
 01.11.22;11:43:06;S94;3;01-Gateway Alive-01.11.22 - 11:43:06
 01.11.22;11:43:21;S93;4;01-Gateway Alive-01.11.22 - 11:43:21
@@ -414,10 +414,10 @@
 01.11.22;12:22:43;S97;0;MATIOSETOUTPUT-EV-100-1-5
 01.11.22;12:24:05;S96;1;Retry(2) til lun: 1008-Funk:0-Data:
 01.11.22;12:27:46;S93;4;Lun:4053 - output no.:1 - Status:5
-01.11.22;12:35:52;S90;0;Ukendt nummerplade HEIM1300
-01.11.22;12:35:53;S96;1;Kamera har opfanget regnr.:HEIM1300-Lane:TCPs-Adr:1012-Funk:0
-01.11.22;12:36:13;S90;0;Bil med nummerplade DJ53749 k�rer ud
-01.11.22;12:37:28;S96;1;Optagelsen har timeout (HEIM1300)-Lane:1
+01.11.22;12:35:52;S90;0;Ukendt nummerplade AA00000
+01.11.22;12:35:53;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;12:36:13;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;12:37:28;S96;1;Optagelsen har timeout (AA00000)-Lane:1
 01.11.22;12:43:01;S88;8;01-Gateway Alive-01.11.22 - 12:43:01
 01.11.22;12:43:06;S94;3;01-Gateway Alive-01.11.22 - 12:43:06
 01.11.22;12:43:21;S93;4;01-Gateway Alive-01.11.22 - 12:43:21
@@ -435,14 +435,14 @@
 01.11.22;13:09:16;S88;8;Lun:8013 - output no.:7 - Status:4
 01.11.22;13:10:18;S88;8;Lun:8013 - output no.:7 - Status:5
 01.11.22;13:10:22;S88;8;Lun:8013 - output no.:7 - Status:4
-01.11.22;13:12:17;S90;0;Ukendt nummerplade CY74368
-01.11.22;13:12:17;S96;1;Kamera har opfanget regnr.:CY74368-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;13:12:17;S90;0;Ukendt nummerplade AA00000
+01.11.22;13:12:17;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
 01.11.22;13:13:01;S88;8;01-Gateway Alive-01.11.22 - 13:13:01
 01.11.22;13:13:06;S94;3;01-Gateway Alive-01.11.22 - 13:13:06
 01.11.22;13:13:21;S93;4;01-Gateway Alive-01.11.22 - 13:13:21
-01.11.22;13:13:37;S90;0;Ukendt nummerplade GG39574
-01.11.22;13:13:37;S96;1;Kamera har opfanget regnr.:GG39574-Lane:TCPs-Adr:1012-Funk:0
-01.11.22;13:13:46;S90;0;Bil med nummerplade GG39574 k�rer ud
+01.11.22;13:13:37;S90;0;Ukendt nummerplade AA00000
+01.11.22;13:13:37;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;13:13:46;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;13:14:53;S88;8;Lun:8012 - output no.:3 - Status:5
 01.11.22;13:15:14;S88;8;Lun:8006 - output no.:2 - Status:4
 01.11.22;13:15:14;S93;4;Lun:4050 - output no.:3 - Status:4
@@ -456,26 +456,26 @@
 01.11.22;13:19:05;S88;8;Lun:8012 - output no.:3 - Status:4
 01.11.22;13:20:47;S88;8;Lun:8013 - output no.:7 - Status:5
 01.11.22;13:20:53;S88;8;Lun:8013 - output no.:7 - Status:4
-01.11.22;13:30:20;S90;0;Ukendt nummerplade YC47541
-01.11.22;13:30:20;S96;1;Kamera har opfanget regnr.:YC47541-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;13:30:20;S90;0;Ukendt nummerplade AA00000
+01.11.22;13:30:20;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
 01.11.22;13:43:01;S88;8;01-Gateway Alive-01.11.22 - 13:43:01
 01.11.22;13:43:06;S94;3;01-Gateway Alive-01.11.22 - 13:43:06
 01.11.22;13:43:21;S93;4;01-Gateway Alive-01.11.22 - 13:43:21
 01.11.22;13:44:51;S97;0;02-GW-|26076| Unit disconnected
-01.11.22;13:44:51;S97;0;02-GW-|26076| Unit logged in (ICCID is 8988280666000450943{8} and OPERATOR is 3 DK)
+01.11.22;13:44:51;S97;0;02-GW-|26076| Unit logged in (ICCID is 0000000000000000000{8} and OPERATOR is a-phone-operator-name
 01.11.22;13:44:51;S97;0;Booted: 50
 01.11.22;13:46:21;S97;0;02-Gateway Alive-01.11.22 - 13:46:21
 01.11.22;13:46:22;S95;2;02-Gateway Alive-01.11.22 - 13:46:22
 01.11.22;14:08:24;S88;8;Lun:8012 - output no.:3 - Status:5
 01.11.22;14:08:29;S88;8;Lun:8012 - output no.:3 - Status:4
 01.11.22;14:09:06;S88;8;Lun:8012 - output no.:3 - Status:4
-01.11.22;14:10:30;S90;0;Bil med nummerplade VC47541 k�rer ud
+01.11.22;14:10:30;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;14:13:01;S88;8;01-Gateway Alive-01.11.22 - 14:13:01
 01.11.22;14:13:06;S94;3;01-Gateway Alive-01.11.22 - 14:13:06
 01.11.22;14:13:21;S93;4;01-Gateway Alive-01.11.22 - 14:13:21
 01.11.22;14:14:55;S94;3;Lun:3038 - output no.:6 - Status:5
 01.11.22;14:15:05;S93;4;Lun:4050 - output no.:3 - Status:4
-01.11.22;14:15:49;S90;0;Bil med nummerplade CY74368 k�rer ud
+01.11.22;14:15:49;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;14:16:21;S97;0;02-Gateway Alive-01.11.22 - 14:16:21
 01.11.22;14:16:22;S95;2;02-Gateway Alive-01.11.22 - 14:16:22
 01.11.22;14:19:30;S94;3;Lun:3038 - output no.:6 - Status:4
@@ -485,7 +485,7 @@
 01.11.22;14:38:33;S97;0;Plug On - Enhed:EV     2
 01.11.22;14:38:46;S97;0;Lun:101 - output no.:2 - Status:5
 01.11.22;14:39:49;S97;0;02-GW-|26076| Unit disconnected
-01.11.22;14:39:49;S97;0;02-GW-|26076| Unit logged in (ICCID is 8988280666000450943{8} and OPERATOR is 3 DK)
+01.11.22;14:39:49;S97;0;02-GW-|26076| Unit logged in (ICCID is 0000000000000000000{8} and OPERATOR is a-phone-operator-name
 01.11.22;14:39:49;S97;0;Booted: 50
 01.11.22;14:43:01;S88;8;01-Gateway Alive-01.11.22 - 14:43:01
 01.11.22;14:43:06;S94;3;01-Gateway Alive-01.11.22 - 14:43:06
@@ -494,11 +494,11 @@
 01.11.22;14:46:06;S93;4;Lun:4038 - output no.:6 - Status:5
 01.11.22;14:46:21;S97;0;02-Gateway Alive-01.11.22 - 14:46:21
 01.11.22;14:46:22;S95;2;02-Gateway Alive-01.11.22 - 14:46:22
-01.11.22;14:48:14;S90;0;Ukendt nummerplade CU80780
-01.11.22;14:48:15;S96;1;Kamera har opfanget regnr.:CU80780-Lane:TCPs-Adr:1012-Funk:0
-01.11.22;14:48:16;S90;0;Ukendt nummerplade BO78O
-01.11.22;14:48:16;S96;1;Kamera har opfanget regnr.:BO78O-Lane:TCPs-Adr:1012-Funk:0
-01.11.22;14:53:55;S90;0;Bil med nummerplade CU80780 k�rer ud
+01.11.22;14:48:14;S90;0;Ukendt nummerplade AA00000
+01.11.22;14:48:15;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;14:48:16;S90;0;Ukendt nummerplade AA00000
+01.11.22;14:48:16;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;14:53:55;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;15:04:29;S93;4;Lun:4038 - output no.:6 - Status:5
 01.11.22;15:13:01;S88;8;01-Gateway Alive-01.11.22 - 15:13:01
 01.11.22;15:13:06;S94;3;01-Gateway Alive-01.11.22 - 15:13:06
@@ -509,25 +509,25 @@
 01.11.22;15:15:37;S88;8;Lun:8006 - output no.:2 - Status:4
 01.11.22;15:16:21;S97;0;02-Gateway Alive-01.11.22 - 15:16:21
 01.11.22;15:16:22;S95;2;02-Gateway Alive-01.11.22 - 15:16:22
-01.11.22;15:32:07;S90;0;Bil med nummerplade KG39574 k�rer ud
-01.11.22;15:41:36;S90;0;Ukendt nummerplade BM85729
-01.11.22;15:41:36;S96;1;Kamera har opfanget regnr.:BM85729-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;15:32:07;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;15:41:36;S90;0;Ukendt nummerplade AA00000
+01.11.22;15:41:36;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
 01.11.22;15:43:01;S88;8;01-Gateway Alive-01.11.22 - 15:43:01
 01.11.22;15:43:06;S94;3;01-Gateway Alive-01.11.22 - 15:43:06
 01.11.22;15:43:22;S93;4;01-Gateway Alive-01.11.22 - 15:43:22
 01.11.22;15:46:21;S97;0;02-Gateway Alive-01.11.22 - 15:46:21
 01.11.22;15:46:22;S95;2;02-Gateway Alive-01.11.22 - 15:46:22
-01.11.22;15:48:03;S90;0;Bil med nummerplade BM85729 k�rer ud
-01.11.22;15:55:44;S90;0;Ukendt nummerplade DF26874
-01.11.22;15:55:44;S96;1;Kamera har opfanget regnr.:DF26874-Lane:TCPs-Adr:1012-Funk:0
-01.11.22;16:04:41;S90;0;Bil med nummerplade JR33887 k�rer ind
-01.11.22;16:04:41;S96;1;Kamera har opfanget regnr.:JR33887-Lane:TCPs-Adr:1012-Funk:-1
-01.11.22;16:04:41;S96;1;Numberplate received from SEELANE: JR33887-Index:2-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:16266-Cust:8153-Key:                              JR33887   -Corrected:-AutoMat.Host:1008
-01.11.22;16:04:51;S90;0;Bil med nummerplade IR33887 k�rer ud
-01.11.22;16:07:47;S90;0;Bil med nummerplade DF26874 k�rer ud
+01.11.22;15:48:03;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;15:55:44;S90;0;Ukendt nummerplade AA00000
+01.11.22;15:55:44;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:0
+01.11.22;16:04:41;S90;0;Bil med nummerplade AA00000 kører ind
+01.11.22;16:04:41;S96;1;Kamera har opfanget regnr.:AA00000-Lane:TCPs-Adr:1012-Funk:-1
+01.11.22;16:04:41;S96;1;Numberplate received from SEELANE: AA00000-Index:2-Stat:0-SvarUnit:7-AktivUnit:1-LUN:1012-CompuMat LUN:1012-Key:12345-Cust:12345-Key:                              AA00000   -Corrected:-AutoMat.Host:1008
+01.11.22;16:04:51;S90;0;Bil med nummerplade AA00000 kører ud
+01.11.22;16:07:47;S90;0;Bil med nummerplade AA00000 kører ud
 01.11.22;16:13:01;S88;8;01-Gateway Alive-01.11.22 - 16:13:01
 01.11.22;16:13:06;S94;3;01-Gateway Alive-01.11.22 - 16:13:06
-01.11.22;16:13:22;S93;4;01-Gateway Alive-01.11.22 - 16:13:22; // FROM HERE, IT IS RAAVALLA
+01.11.22;16:13:22;S93;4;01-Gateway Alive-01.11.22 - 16:13:22
 01/07-22;05:09:31;S94;3;00-WinSock Connection accept
 01/07-22;05:09:31;S94;3;01-Login accepted from 80.166.12.167 - Gateway Serial number: 60008 - MatNo: 0
 01/07-22;05:09:31;S94;3;01-GW-CompuSoft CompuMat MicroCloud Gateway.NET version_ 1.0.0.259
@@ -547,7 +547,7 @@
 01/07-22;05:16:53;S95;2;MicroSD Status: Unpaired-LunNo:2119
 01/07-22;05:18:37;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;05:23:46;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
-01/07-22;05:34:17;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telenor SE 1nce.net)
+01/07-22;05:34:17;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;05:35:48;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;05:38:06;S92;5;01-Gateway Alive-01/07-22 - 05:38:06
 01/07-22;05:39:14;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
@@ -556,7 +556,7 @@
 01/07-22;05:40:30;S95;2;01-Gateway Alive-01/07-22 - 05:40:30
 01/07-22;05:40:37;S93;4;01-Gateway Alive-01/07-22 - 05:40:37
 01/07-22;05:40:39;S97;0;01-Gateway Alive-01/07-22 - 05:40:39
-01/07-22;05:41:54;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telia 1nce.net)
+01/07-22;05:41:54;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;05:42:41;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;05:46:07;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;05:47:13;S94;3;01-GW-|26442| Unit disconnected
@@ -580,42 +580,42 @@
 01/07-22;06:40:37;S93;4;01-Gateway Alive-01/07-22 - 06:40:37
 01/07-22;06:40:39;S97;0;01-Gateway Alive-01/07-22 - 06:40:39
 01/07-22;06:49:46;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
-01/07-22;06:56:19;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Tele2 1nce.net)
+01/07-22;06:56:19;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;06:56:38;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;07:01:45;S94;3;01-GW-|26442| Unit disconnected
-01/07-22;07:02:10;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telia 1nce.net)
+01/07-22;07:02:10;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;07:03:04;S94;3;01-GW-|26442| Unit disconnected
 01/07-22;07:03:30;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;07:05:14;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
-01/07-22;07:07:50;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telenor SE 1nce.net)
+01/07-22;07:07:50;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;07:08:06;S92;5;01-Gateway Alive-01/07-22 - 07:08:06
 01/07-22;07:09:32;S94;3;01-Gateway Alive-01/07-22 - 07:09:32
 01/07-22;07:09:59;S95;2;01-GW-|26305| Unit disconnected
-01/07-22;07:10:14;S95;2;01-GW-|26305| Unit logged in (ICCID is 8988280666000446182{0} and OPERATOR is Telenor DK)
+01/07-22;07:10:14;S95;2;01-GW-|26305| Unit logged in (ICCID is 0000000000000000000{0} and OPERATOR is a-phone-operator-name
 01/07-22;07:10:30;S95;2;01-Gateway Alive-01/07-22 - 07:10:30
 01/07-22;07:10:38;S93;4;01-Gateway Alive-01/07-22 - 07:10:38
 01/07-22;07:10:39;S97;0;01-Gateway Alive-01/07-22 - 07:10:39
 01/07-22;07:13:13;S94;3;01-GW-|26442| Unit disconnected
-01/07-22;07:15:13;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telia 1nce.net)
+01/07-22;07:15:13;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;07:21:33;S94;3;01-GW-|26442| Unit disconnected
-01/07-22;07:22:40;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telia 1nce.net)
+01/07-22;07:22:40;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;07:28:01;S94;3;01-GW-|26442| Unit disconnected
-01/07-22;07:29:18;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is TELIA S 1nce.net)
+01/07-22;07:29:18;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;07:32:44;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;07:34:41;S94;3;01-GW-|26442| Unit disconnected
 01/07-22;07:36:10;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
-01/07-22;07:37:50;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telenor DK 1nce.net)
+01/07-22;07:37:50;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;07:38:06;S92;5;01-Gateway Alive-01/07-22 - 07:38:06
 01/07-22;07:38:34;S94;3;01-GW-|26442| Unit disconnected
 01/07-22;07:39:32;S94;3;01-Gateway Alive-01/07-22 - 07:39:32
 01/07-22;07:40:30;S95;2;01-Gateway Alive-01/07-22 - 07:40:30
 01/07-22;07:40:38;S93;4;01-Gateway Alive-01/07-22 - 07:40:38
 01/07-22;07:40:39;S97;0;01-Gateway Alive-01/07-22 - 07:40:39
-01/07-22;07:42:50;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telia 1nce.net)
+01/07-22;07:42:50;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;07:49:55;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;07:53:22;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;08:00:42;S94;3;01-GW-|26442| Unit disconnected
-01/07-22;08:01:47;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telia 1nce.net)
+01/07-22;08:01:47;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;08:03:43;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;08:08:06;S92;5;01-Gateway Alive-01/07-22 - 08:08:06
 01/07-22;08:09:32;S94;3;01-Gateway Alive-01/07-22 - 08:09:32
@@ -624,9 +624,9 @@
 01/07-22;08:10:39;S97;0;01-Gateway Alive-01/07-22 - 08:10:39
 01/07-22;08:22:50;S95;2;Fatal Error at 'QueryMicroSD': 2107
 01/07-22;08:22:50;S95;2;01-GW-|26307| Unit disconnected
-01/07-22;08:23:18;S95;2;01-GW-|26307| Unit logged in (ICCID is 8988280666000446181{2} and OPERATOR is Telenor DK)
+01/07-22;08:23:18;S95;2;01-GW-|26307| Unit logged in (ICCID is 0000000000000000000{2} and OPERATOR is a-phone-operator-name
 01/07-22;08:24:25;S95;2;01-GW-|26305| Unit disconnected
-01/07-22;08:24:37;S95;2;01-GW-|26305| Unit logged in (ICCID is 8988280666000446182{0} and OPERATOR is Telenor DK)
+01/07-22;08:24:37;S95;2;01-GW-|26305| Unit logged in (ICCID is 0000000000000000000{0} and OPERATOR is a-phone-operator-name
 01/07-22;08:26:03;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;08:32:54;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;08:34:38;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
@@ -637,10 +637,10 @@
 01/07-22;08:40:39;S97;0;01-Gateway Alive-01/07-22 - 08:40:39
 01/07-22;08:43:14;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;08:57:53;S94;3;01-GW-|26442| Unit disconnected
-01/07-22;08:59:59;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Tele2 1nce.net)
+01/07-22;08:59:59;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;09:02:08;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;09:05:38;S93;4;01-GW-|26323| Unit disconnected
-01/07-22;09:05:38;S93;4;01-GW-|26323| Unit logged in (ICCID is 8988280666000446127{5} and OPERATOR is TELIA S)
+01/07-22;09:05:38;S93;4;01-GW-|26323| Unit logged in (ICCID is 0000000000000000000{5} and OPERATOR is a-phone-operator-name
 01/07-22;09:05:38;S93;4;Booted: 4123
 01/07-22;09:08:07;S92;5;01-Gateway Alive-01/07-22 - 09:08:07
 01/07-22;09:09:01;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
@@ -651,11 +651,11 @@
 01/07-22;09:13:39;S94;3;01-GW-|26442| Unit disconnected
 01/07-22;09:15:36;S96;1;Diagnostic: 01/07-22 09:12:52-V:26-MD:36-1040-SD:0-1000-Code:256-0-Sev:I-:ALIVE
 01/07-22;09:16:36;S96;1;Diagnostic: 01/07-22 09:13:52-V:26-MD:36-1041-SD:0-1000-Code:256-0-Sev:I-:ALIVE
-01/07-22;09:17:14;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telenor SE 1nce.net)
+01/07-22;09:17:14;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;09:26:12;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;09:29:38;S96;1;Diagnostic: 01/07-22 09:26:52-V:26-MD:36-1042-SD:0-1000-Code:256-0-Sev:I-:ALIVE
 01/07-22;09:31:27;S93;4;01-GW-|26323| Unit disconnected
-01/07-22;09:31:30;S93;4;01-GW-|26323| Unit logged in (ICCID is 8988280666000446127{5} and OPERATOR is TELIA S)
+01/07-22;09:31:30;S93;4;01-GW-|26323| Unit logged in (ICCID is 0000000000000000000{5} and OPERATOR is a-phone-operator-name
 01/07-22;09:31:30;S93;4;Booted: 4123
 01/07-22;09:36:30;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;09:38:07;S92;5;01-Gateway Alive-01/07-22 - 09:38:07
@@ -664,16 +664,16 @@
 01/07-22;09:40:38;S93;4;01-Gateway Alive-01/07-22 - 09:40:38
 01/07-22;09:40:39;S97;0;01-Gateway Alive-01/07-22 - 09:40:39
 01/07-22;09:47:52;S93;4;01-GW-|26323| Unit disconnected
-01/07-22;09:47:52;S93;4;01-GW-|26323| Unit logged in (ICCID is 8988280666000446127{5} and OPERATOR is TELIA S)
+01/07-22;09:47:52;S93;4;01-GW-|26323| Unit logged in (ICCID is 0000000000000000000{5} and OPERATOR is a-phone-operator-name
 01/07-22;09:47:52;S93;4;Booted: 4123
 01/07-22;09:48:33;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;09:50:15;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;09:55:24;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;09:56:41;S94;3;01-GW-|26442| Unit disconnected
-01/07-22;09:56:41;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is TELIA S 1nce.net)
+01/07-22;09:56:41;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;10:00:34;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;10:02:23;S92;5;01-GW-|26425| Unit disconnected
-01/07-22;10:02:23;S92;5;01-GW-|26425| Unit logged in (ICCID is 8988280666000446146{5} and OPERATOR is 3 DK)
+01/07-22;10:02:23;S92;5;01-GW-|26425| Unit logged in (ICCID is 0000000000000000000{5} and OPERATOR is a-phone-operator-name
 01/07-22;10:08:07;S92;5;01-Gateway Alive-01/07-22 - 10:08:07
 01/07-22;10:09:32;S94;3;01-Gateway Alive-01/07-22 - 10:09:32
 01/07-22;10:10:30;S95;2;01-Gateway Alive-01/07-22 - 10:10:30
@@ -688,13 +688,13 @@
 01/07-22;11:08:07;S92;5;01-Gateway Alive-01/07-22 - 11:08:07
 01/07-22;11:09:32;S94;3;01-Gateway Alive-01/07-22 - 11:09:32
 01/07-22;11:10:26;S93;4;01-GW-|26323| Unit disconnected
-01/07-22;11:10:27;S93;4;01-GW-|26323| Unit logged in (ICCID is 8988280666000446127{5} and OPERATOR is TELIA S)
+01/07-22;11:10:27;S93;4;01-GW-|26323| Unit logged in (ICCID is 0000000000000000000{5} and OPERATOR is a-phone-operator-name
 01/07-22;11:10:27;S93;4;Booted: 4123
 01/07-22;11:10:31;S95;2;01-Gateway Alive-01/07-22 - 11:10:31
 01/07-22;11:10:38;S93;4;01-Gateway Alive-01/07-22 - 11:10:38
 01/07-22;11:10:39;S97;0;01-Gateway Alive-01/07-22 - 11:10:39
 01/07-22;11:21:04;S93;4;01-GW-|26323| Unit disconnected
-01/07-22;11:21:04;S93;4;01-GW-|26323| Unit logged in (ICCID is 8988280666000446127{5} and OPERATOR is TELIA S)
+01/07-22;11:21:04;S93;4;01-GW-|26323| Unit logged in (ICCID is 0000000000000000000{5} and OPERATOR is a-phone-operator-name
 01/07-22;11:21:04;S93;4;Booted: 4123
 01/07-22;11:24:14;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;11:28:13;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
@@ -704,13 +704,13 @@
 01/07-22;11:40:38;S93;4;01-Gateway Alive-01/07-22 - 11:40:38
 01/07-22;11:40:39;S97;0;01-Gateway Alive-01/07-22 - 11:40:39
 01/07-22;11:54:10;S94;3;01-GW-|26442| Unit disconnected
-01/07-22;11:54:10;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telia 1nce.net)
+01/07-22;11:54:10;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;11:55:22;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;11:56:57;S93;4;01-GW-|26323| Unit disconnected
-01/07-22;11:56:57;S93;4;01-GW-|26323| Unit logged in (ICCID is 8988280666000446127{5} and OPERATOR is TELIA S)
+01/07-22;11:56:57;S93;4;01-GW-|26323| Unit logged in (ICCID is 0000000000000000000{5} and OPERATOR is a-phone-operator-name
 01/07-22;11:56:57;S93;4;Booted: 4123
 01/07-22;12:00:53;S94;3;01-GW-|26442| Unit disconnected
-01/07-22;12:06:13;S94;3;01-GW-|26442| Unit logged in (ICCID is 8988280666000446216{6} and OPERATOR is Telia 1nce.net)
+01/07-22;12:06:13;S94;3;01-GW-|26442| Unit logged in (ICCID is 0000000000000000000{6} and OPERATOR is a-phone-operator-name
 01/07-22;12:08:07;S92;5;01-Gateway Alive-01/07-22 - 12:08:07
 01/07-22;12:09:32;S94;3;01-Gateway Alive-01/07-22 - 12:09:32
 01/07-22;12:10:31;S95;2;01-Gateway Alive-01/07-22 - 12:10:31
@@ -719,14 +719,14 @@
 01/07-22;12:11:13;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;12:19:26;S94;3;01-GW-|26313| Unit disconnected
 01/07-22;12:19:37;S95;2;01-GW-|26305| Unit disconnected
-01/07-22;12:19:42;S94;3;Magnus Johansson-FELTRANS vid returmelding-Funk:1-Data:-Svarunit:LUN:3212
-01/07-22;12:19:52;S95;2;01-GW-|26305| Unit logged in (ICCID is 8988280666000446182{0} and OPERATOR is Telenor DK)
-01/07-22;12:19:57;S94;3;01-GW-|26313| Unit logged in (ICCID is 8988280666000446148{1} and OPERATOR is 3 DK)
+01/07-22;12:19:42;S94;3;Person Personsson-FELTRANS vid returmelding-Funk:1-Data:-Svarunit:LUN:3212
+01/07-22;12:19:52;S95;2;01-GW-|26305| Unit logged in (ICCID is 0000000000000000000{0} and OPERATOR is a-phone-operator-name
+01/07-22;12:19:57;S94;3;01-GW-|26313| Unit logged in (ICCID is 0000000000000000000{1} and OPERATOR is a-phone-operator-name
 01/07-22;12:29:35;S97;0;01-GW-|26436| Unit disconnected
-01/07-22;12:29:35;S97;0;01-GW-|26436| Unit logged in (ICCID is 8988280666000446186{1} and OPERATOR is Telenor SE)
+01/07-22;12:29:35;S97;0;01-GW-|26436| Unit logged in (ICCID is 0000000000000000000{1} and OPERATOR is a-phone-operator-name
 01/07-22;12:34:02;S93;4;01-GW-|26323| Unit disconnected
 01/07-22;12:34:02;S93;4;Booted: 4123
-01/07-22;12:34:02;S93;4;01-GW-|26323| Unit logged in (ICCID is 8988280666000446127{5} and OPERATOR is TELIA S)
+01/07-22;12:34:02;S93;4;01-GW-|26323| Unit logged in (ICCID is 0000000000000000000{5} and OPERATOR is a-phone-operator-name
 01/07-22;12:38:07;S92;5;01-Gateway Alive-01/07-22 - 12:38:07
 01/07-22;12:39:32;S94;3;01-Gateway Alive-01/07-22 - 12:39:32
 01/07-22;12:40:31;S95;2;01-Gateway Alive-01/07-22 - 12:40:31
