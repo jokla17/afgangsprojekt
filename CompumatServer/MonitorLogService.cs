@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace CompumatServer {
     public class MonitorLogService {
         public static readonly string LOG_FILE_PATH = "../../../logs";
-        public static readonly string INPUT_FILE = "/MONITOR-LOG.txt";
+        //public static readonly string INPUT_FILE = "/MONITOR-LOG.txt";
+        public static readonly string INPUT_FILE = "/CompatibilityTest.txt";
         public static readonly string OUTPUT_FILE = "/LiveLog.txt";
 
         //private FileStream _logReader = File.OpenRead(LOG_FILE_PATH);
