@@ -529,14 +529,14 @@
 01.11.22;16:13:06;S94;3;01-Gateway Alive-01.11.22 - 16:13:06
 01.11.22;16:13:22;S93;4;01-Gateway Alive-01.11.22 - 16:13:22
 01/07-22;05:09:31;S94;3;00-WinSock Connection accept
-01/07-22;05:09:31;S94;3;01-Login accepted from 80.166.12.167 - Gateway Serial number: 60008 - MatNo: 0
+01/07-22;05:09:31;S94;3;01-login accepted from 00.000.00.000 - Gateway Serial number: 60008 - MatNo: 0
 01/07-22;05:09:31;S94;3;01-GW-CompuSoft CompuMat MicroCloud Gateway.NET version_ 1.0.0.259
 01/07-22;05:10:29;S95;2;00-WinSock Connection accept
-01/07-22;05:10:29;S95;2;01-Login accepted from 80.166.12.167 - Gateway Serial number: 60007 - MatNo: 0
+01/07-22;05:10:29;S95;2;01-login accepted from 00.000.00.000 - Gateway Serial number: 60007 - MatNo: 0
 01/07-22;05:10:30;S95;2;01-GW-CompuSoft CompuMat MicroCloud Gateway.NET version_ 1.0.0.259
 01/07-22;05:10:37;S93;4;01-Gateway Alive-01/07-22 - 05:10:37
 01/07-22;05:10:38;S97;0;00-WinSock Connection accept
-01/07-22;05:10:38;S97;0;01-Login accepted from 80.166.12.167 - Gateway Serial number: 60006 - MatNo: 0
+01/07-22;05:10:38;S97;0;01-login accepted from 00.000.00.000 - Gateway Serial number: 60006 - MatNo: 0
 01/07-22;05:10:38;S97;0;01-GW-CompuSoft CompuMat MicroCloud Gateway.NET version_ 1.0.0.259
 01/07-22;05:11:44;S96;1;Retry(2) til lun: 1038-Funk:0-Data:
 01/07-22;05:15:10;S96;1;Retry(2) til lun: 1038-Funk:0-Data:

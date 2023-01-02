@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using System.Diagnostics;
 
 namespace API.Hubs {
     public class CompumatHub : Hub {
@@ -29,6 +30,8 @@ namespace API.Hubs {
         }
 
         public async Task CompumatEvent(string routingKey, string message) {
+            TimeSpan timestamp = DateTime.UtcNow.Subtract(Process.GetCurrentProcess().StartTime.ToUniversalTime());
+            File.AppendAllText("./CompatibilityTestLog.txt", $" {timestamp} > event-message: [ {message} ] \n");
             await _hub.Clients.All.SendAsync(routingKey, message);
         }
     }

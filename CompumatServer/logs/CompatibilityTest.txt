@@ -1,4 +1,4 @@
-01/07-22;00:00:00;S97;0;-FEJLTRANS ved returmelding-Funk:1-Data:
+﻿01/07-22;00:00:00;S97;0;-FEJLTRANS ved returmelding-Funk:1-Data:
 01/07-22;00:00:01;S97;0;-FELTRANS vid returmelding-Funk:1-Data:
 01/07-22;00:00:02;S97;0;00-WinSock Connection accept
 01/07-22;00:00:03;S97;0;01-Gateway Alive-01.11.22 - 16:13:22
@@ -146,4 +146,3 @@
 01/07-22;00:02:25;S97;0;Server started: S87 (Settings cleared)
 01/07-22;00:02:26;S97;0;Server stopped! - Station:S87
 01/07-22;00:02:27;S97;0;State correction: 9-&gt;0 (N)
-01/07-22;00:02:28;S97;0;Ukendt nummerplade AA00000
